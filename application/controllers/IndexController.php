@@ -17,7 +17,6 @@ class IndexController extends Zend_Controller_Action
     
     public function aboutAction()
     {
-    	$this->_helper->layout->setLayout("backend");
     	$this->render("index");
     }
     

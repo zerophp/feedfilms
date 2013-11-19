@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <nav>
+	    <home>
+            <label>Home</label>
+            <uri>/</uri>
+        </home>
+        <about>
+            <label>About</label>
+            <uri>/index/about</uri>
+        </about>
+        <contact>
+            <label>Contact</label>
+            <uri>/index/contact</uri>
+        </contact>
+    </nav>
+</config>
