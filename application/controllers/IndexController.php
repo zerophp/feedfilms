@@ -12,6 +12,7 @@ class IndexController extends Zend_Controller_Action
     {
         // action body
         $this->_helper->layout->setLayout('frontend');
+//         $this->render('bar');
         $this->view->title="HELLO WORLD";
     }
 
