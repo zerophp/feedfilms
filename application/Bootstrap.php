@@ -9,6 +9,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     	$view = $this->getResource('view');
     	$view->doctype('HTML5');
     }
-    
+
 }
 
