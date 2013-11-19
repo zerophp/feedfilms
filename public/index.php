@@ -23,23 +23,3 @@ $application = new Zend_Application(
 );
 $application->bootstrap()
             ->run();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> dd047cddd3e930d7553ad6c1925c526ca783b6ca
