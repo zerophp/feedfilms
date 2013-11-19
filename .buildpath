@@ -2,5 +2,8 @@
 <buildpath>
 	<buildpathentry kind="src" path=""/>
 	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+<<<<<<< HEAD
 	<buildpathentry kind="con" path="org.eclipse.dltk.USER_LIBRARY/org.eclipse.php.core.PHPNature#Zend Framework 1"/>
+=======
+>>>>>>> dd047cddd3e930d7553ad6c1925c526ca783b6ca
 </buildpath>

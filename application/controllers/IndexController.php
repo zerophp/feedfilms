@@ -30,8 +30,8 @@ class IndexController extends Zend_Controller_Action
     	$this->_helper->layout->setLayout("layout1");
     	$this->view->title="contact";
     	$this->render("index");
+
     }
 
 
 }
-
