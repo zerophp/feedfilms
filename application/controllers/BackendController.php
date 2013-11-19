@@ -1,11 +1,11 @@
 <?php
 
-class IndexController extends Zend_Controller_Action
+class BackendController extends Zend_Controller_Action
 {
 
     public function init()
     {
-        /* Initialize action controller here */
+        $this->_helper->layout()->setLayout("backend-layout");
     }
 
     public function indexAction()
@@ -15,3 +15,4 @@ class IndexController extends Zend_Controller_Action
 
 
 }
+
