@@ -13,19 +13,19 @@ class AuthorController extends Zend_Controller_Action
     public function loginAction()
     {
         // action body
-        $this->view->subtitle = "Inicio";
+        $this->view->subtitle = "Acceso";
     }
     
     public function logoutAction()
     {
         // about 
-        $this->view->subtitle = "Acerca de";
+        $this->view->subtitle = "Desconectar";
     }
 
     public function registerAction()
     {
         // about
-        $this->view->subtitle = "Contacto";
+        $this->view->subtitle = "Registro";
     }
 
 }
