@@ -1,0 +1,7 @@
+<phpunit>
+	<testsuites>
+		<testsuite name="controllers_dir">
+			<directory>application/controllers</directory>
+		</testsuite>
+	</testsuites>
+</phpunit>
