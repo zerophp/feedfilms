@@ -1,0 +1,63 @@
+<<<<<<< HEAD
+@CHARSET "ISO-8859-1";
+/*!
+	CSS de la parte de preguntas
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+
+.ta{
+	width:60%;
+	
+}
+
+#cajapreg{
+	float:left;
+
+}
+
+#opciones{
+	float:right;
+
+=======
+@CHARSET "ISO-8859-1";
+/*!
+	CSS de la parte de preguntas
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+
+
+
+#cajapreg{
+	float:left;
+	width:50%;
+}
+
+#options{
+	float:right;
+	width:50%;
+	padding:20px;
+}
+
+.controls{
+	padding-top:15px;
+}
+
+#texto{
+	padding-top:0px;
+}
+
+#selections{
+	padding-bottom:50px;
+}
+
+.answ{
+
+	width: 77%;
+}
+
+.form-actions{
+	padding-top:55px;
+}
+
+#new_question{
+	padding-bottom:10px;
+>>>>>>> a417658a40ef11d5c9c2984452133dfbfbccfa71
+}
