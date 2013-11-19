@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php echo $this->doctype;?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -49,17 +49,14 @@
                 <li><a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'about'));?>">About</a></li>
                 <li><a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'contact'));?>">Contact</a></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuario <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
+                    <li><a href="<?php echo $this->url(array('controller' => 'author', 'action' => 'login'));?>">Login</a></li>
+                    <li><a href="<?php echo $this->url(array('controller' => 'author', 'action' => 'register'));?>">Registrarse</a></li>
+                    <li><a href="<?php echo $this->url(array('controller' => 'author', 'action' => 'logout'));?>">Salir</a></li>
                   </ul>
                 </li>
+                <li><a href="<?php echo $this->url(array('controller' => 'backend', 'action' => 'index'));?>">Backend</a></li>
               </ul>
             </div>
           </div>
@@ -114,7 +111,10 @@
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
 
-
+	<div>
+	<!--  content  -->
+	 <?php echo $this->layout()->content ?>
+	</div>
 
     <!-- Marketing messaging and featurettes
     ================================================== -->
@@ -205,7 +205,7 @@
     '/js/bootstrap.min.js',
     'text/javascript') ?>
         
-    <?php echo $this->layout()->content ?>
+   
     
   </body>
 </html>
