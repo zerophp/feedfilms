@@ -11,6 +11,7 @@ class IndexController extends Zend_Controller_Action
     public function indexAction()
     {
         // action body
+        $this->_helper->layout->setLayout('frontend');
         $this->view->title = "Prueba";
     }
 

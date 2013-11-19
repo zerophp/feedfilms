@@ -4,3 +4,6 @@ README.txt
 demos/
 extras/documentation
 .idea
+.settings
+.buildpath
+.project
