@@ -1,3 +1,22 @@
+<<<<<<< HEAD
+<phpunit bootstrap="./bootstrap.php">
+    <testsuite name="Application Test Suite">
+        <directory>./application</directory>
+    </testsuite>
+    <testsuite name="Library Test Suite">
+        <directory>./library</directory>
+    </testsuite>
+    
+    <filter>
+        <!-- If Zend Framework is inside your project's library, uncomment this filter -->
+        <!-- 
+        <whitelist>
+            <directory suffix=".php">../../library/Zend</directory>
+        </whitelist>
+        -->
+    </filter>
+</phpunit>
+=======
 <phpunit>
 	<testsuites>
 		<testsuite name="controllers_dir">
@@ -5,3 +24,4 @@
 		</testsuite>
 	</testsuites>
 </phpunit>
+>>>>>>> dd047cddd3e930d7553ad6c1925c526ca783b6ca

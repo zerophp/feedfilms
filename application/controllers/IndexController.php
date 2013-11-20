@@ -11,25 +11,12 @@ class IndexController extends Zend_Controller_Action
     public function indexAction()
     {
         // action body
+
         $this->_helper->layout->setLayout('frontend');
-//         $this->render('bar');
+         $this->render('bar');
         $this->view->title="HELLO WORLD";
+
     }
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
