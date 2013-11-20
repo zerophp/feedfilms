@@ -14,24 +14,7 @@ $this->headTitle($this->title);
 <tr>
  <td><?php echo $this->escape($album->title);?></td>
  <td><?php echo $this->escape($album->artist);?></td>
-<<<<<<< HEAD
 
-<td>
- <a href="<?php echo $this->url(array('controller'=>'albums', 
- 'action'=>'edit', 'id'=>$album->id));?>">Edit</a>
- <a href="<?php echo $this->url(array('controller'=>'albums', 
- 'action'=>'delete', 'id'=>$album->id));?>">Delete</a>
- </td>
-</tr>
-<?php endforeach; ?>
-</table>
-<?php 
-$this->title = "Add new album";
-
-$this->headTitle($this->title);
-echo $this->form ;
-?>
-=======
  
 <td>
 <a href="<?php echo $this->url(array('controller'=>'albums',
@@ -42,4 +25,4 @@ echo $this->form ;
 </tr>
 <?php endforeach; ?>
 </table>
->>>>>>> 563200625e36a74adc27e59dfb53c2d1f6d350fc
+
