@@ -9,11 +9,9 @@
   <h2><?php echo $this->message ?></h2>
 
   <?php if (isset($this->exception)): ?>
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> dd047cddd3e930d7553ad6c1925c526ca783b6ca
+
+
   <h3>Exception information:</h3>
   <p>
       <b>Message:</b> <?php echo $this->exception->getMessage() ?>
@@ -24,14 +22,10 @@
   </pre>
 
   <h3>Request Parameters:</h3>
-<<<<<<< HEAD
-  <pre><?php echo $this->escape(var_export($this->request->getParams(), true)) ?>
-  </pre>
 
-=======
   <pre><?php echo var_export($this->request->getParams(), true) ?>
   </pre>
->>>>>>> dd047cddd3e930d7553ad6c1925c526ca783b6ca
+
   <?php endif ?>
 
 </body>
