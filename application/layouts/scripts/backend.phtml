@@ -1,0 +1,34 @@
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>Feedfilms</title>
+    <?php 
+        echo $this->headLink()->appendStylesheet('/css/bootstrap.min.css')
+                              ->appendStylesheet('/css/offcanvas.css')
+    ?>
+</head>
+<body>
+
+
+<?php echo $this->partial('partials/backend/nav.phtml');?>
+    <div class="container">
+      <div class="row row-offcanvas row-offcanvas-right">
+      	<div class="col-xs-12 col-sm-9">
+	        <?php //echo $this->partial('partials/backend/content.phtml');?>
+	        <?php echo $this->layout()->content ?>
+        </div><!--/span-->
+        <?php echo $this->partial('partials/backend/menu.phtml');?>        
+      </div><!--/row-->
+      <hr>
+      <footer>
+        <p>© Company 2013</p>
+      </footer>
+    </div><!--/.container-->
+
+<?php 
+    echo $this->inlineScript()->appendFile('https://code.jquery.com/jquery-1.10.2.min.js')
+                              ->appendFile('/js/bootstrap.min.js')
+?>
+</body>
+</html>
