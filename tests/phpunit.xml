@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <phpunit bootstrap="./bootstrap.php">
     <testsuite name="Application Test Suite">
         <directory>./application</directory>
@@ -16,12 +15,4 @@
         -->
     </filter>
 </phpunit>
-=======
-<phpunit>
-	<testsuites>
-		<testsuite name="controllers_dir">
-			<directory>application/controllers</directory>
-		</testsuite>
-	</testsuites>
-</phpunit>
->>>>>>> dd047cddd3e930d7553ad6c1925c526ca783b6ca
+
