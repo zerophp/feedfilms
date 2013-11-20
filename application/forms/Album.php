@@ -7,6 +7,9 @@ class Application_Form_Album extends Zend_Form
 		$this->setMethod('post');
 		$this->setName('album');
 		
+		$destination=realpath($_SERVER['DOCUMENT_ROOT']);
+		
+		
 		$id = new Zend_Form_Element_Hidden('id');
 		$id->addFilter('Int');
 		
@@ -46,6 +49,7 @@ class Application_Form_Album extends Zend_Form
 				->setmultiOptions($this->_selectOptions())
 				->setAttrib('maxlength', 200)
 				->setAttrib('size', 1);
+		
 		$regimens = new Zend_Form_Element_Radio('regimen');
 		$regimens->setLabel('Selecciona un regimen')
 				->setMultiOptions(array('1'=>'Activo', '0'=>'Inactivo'))
@@ -75,12 +79,34 @@ class Application_Form_Album extends Zend_Form
 				->addFilter('StringTrim')
 				->addValidator('NotEmpty');
 		
+		$description = new Zend_Form_Element_Textarea('description');
+		$description->setLabel('Descripción')
+						->setRequired(true)
+						->addValidator('NotEmpty', true)
+						->addFilter('StripTags')
+						->addFilter('StringTrim')
+						->setAttrib('size', 1);
+		
+		
+		$image = new Zend_Form_Element_File('photo');
+		$image->setLabel('Image (512kb size, jpg,png,gif)')
+					->addValidator('NotEmpty', true)
+					->setDestination($destination)
+					->addFilter('StripTags')
+					->addFilter('StringTrim')
+					->addValidator('NotExists', false, array($destination))
+					->addValidator('Count', false, array(1))
+					->addValidator('Extension', true, array('jpg,png,gif'))
+					->addValidator('Size', false, array(512000));
+		
+		
 		$submit = new Zend_Form_Element_Submit('submit');
 		$submit->setAttrib('id', 'submitbutton');
 		
 		$this->addElements(array($id, 
 								$email, $password, $status, $role_id,
-								$regimens,$webservice,
+								$regimens,$webservice,$description,
+								$image,
 								$artist, $title, $submit));
 	}
 	
