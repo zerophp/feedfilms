@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 SetEnv APPLICATION_ENV development 
+=======
+SetEnv APPLICATION_ENV development
+
+>>>>>>> 1634a547754b68334a11acbc9138e2aaa92573d3
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^.*$ - [NC,L]
 RewriteRule ^.*$ index.php [NC,L]
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1634a547754b68334a11acbc9138e2aaa92573d3

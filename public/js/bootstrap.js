@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * Bootstrap v3.0.1 by @fat and @mdo
+=======
+ * Bootstrap v3.0.2 by @fat and @mdo
+>>>>>>> 1634a547754b68334a11acbc9138e2aaa92573d3
  * Copyright 2013 Twitter, Inc.
  * Licensed under http://www.apache.org/licenses/LICENSE-2.0
  *
@@ -9,7 +13,11 @@
 if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery") }
 
 /* ========================================================================
+<<<<<<< HEAD
  * Bootstrap: transition.js v3.0.0
+=======
+ * Bootstrap: transition.js v3.0.2
+>>>>>>> 1634a547754b68334a11acbc9138e2aaa92573d3
  * http://getbootstrap.com/javascript/#transitions
  * ========================================================================
  * Copyright 2013 Twitter, Inc.
@@ -63,10 +71,17 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     $.support.transition = transitionEnd()
   })
 
+<<<<<<< HEAD
 }(window.jQuery);
 
 /* ========================================================================
  * Bootstrap: alert.js v3.0.0
+=======
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: alert.js v3.0.2
+>>>>>>> 1634a547754b68334a11acbc9138e2aaa92573d3
  * http://getbootstrap.com/javascript/#alerts
  * ========================================================================
  * Copyright 2013 Twitter, Inc.
@@ -162,10 +177,17 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
 
   $(document).on('click.bs.alert.data-api', dismiss, Alert.prototype.close)
 
+<<<<<<< HEAD
 }(window.jQuery);
 
 /* ========================================================================
  * Bootstrap: button.js v3.0.0
+=======
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: button.js v3.0.2
+>>>>>>> 1634a547754b68334a11acbc9138e2aaa92573d3
  * http://getbootstrap.com/javascript/#buttons
  * ========================================================================
  * Copyright 2013 Twitter, Inc.
@@ -272,10 +294,17 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     e.preventDefault()
   })
 
+<<<<<<< HEAD
 }(window.jQuery);
 
 /* ========================================================================
  * Bootstrap: carousel.js v3.0.0
+=======
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: carousel.js v3.0.2
+>>>>>>> 1634a547754b68334a11acbc9138e2aaa92573d3
  * http://getbootstrap.com/javascript/#carousel
  * ========================================================================
  * Copyright 2013 Twitter, Inc.
@@ -490,10 +519,17 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     })
   })
 
+<<<<<<< HEAD
 }(window.jQuery);
 
 /* ========================================================================
  * Bootstrap: collapse.js v3.0.0
+=======
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: collapse.js v3.0.2
+>>>>>>> 1634a547754b68334a11acbc9138e2aaa92573d3
  * http://getbootstrap.com/javascript/#collapse
  * ========================================================================
  * Copyright 2013 Twitter, Inc.
@@ -670,10 +706,17 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     $target.collapse(option)
   })
 
+<<<<<<< HEAD
 }(window.jQuery);
 
 /* ========================================================================
  * Bootstrap: dropdown.js v3.0.0
+=======
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: dropdown.js v3.0.2
+>>>>>>> 1634a547754b68334a11acbc9138e2aaa92573d3
  * http://getbootstrap.com/javascript/#dropdowns
  * ========================================================================
  * Copyright 2013 Twitter, Inc.
@@ -825,10 +868,17 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     .on('click.bs.dropdown.data-api'  , toggle, Dropdown.prototype.toggle)
     .on('keydown.bs.dropdown.data-api', toggle + ', [role=menu]' , Dropdown.prototype.keydown)
 
+<<<<<<< HEAD
 }(window.jQuery);
 
 /* ========================================================================
  * Bootstrap: modal.js v3.0.0
+=======
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: modal.js v3.0.2
+>>>>>>> 1634a547754b68334a11acbc9138e2aaa92573d3
  * http://getbootstrap.com/javascript/#modals
  * ========================================================================
  * Copyright 2013 Twitter, Inc.
@@ -1072,10 +1122,17 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     .on('show.bs.modal',  '.modal', function () { $(document.body).addClass('modal-open') })
     .on('hidden.bs.modal', '.modal', function () { $(document.body).removeClass('modal-open') })
 
+<<<<<<< HEAD
 }(window.jQuery);
 
 /* ========================================================================
  * Bootstrap: tooltip.js v3.0.0
+=======
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: tooltip.js v3.0.2
+>>>>>>> 1634a547754b68334a11acbc9138e2aaa92573d3
  * http://getbootstrap.com/javascript/#tooltip
  * Inspired by the original jQuery.tipsy by Jason Frame
  * ========================================================================
@@ -1459,10 +1516,17 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     return this
   }
 
+<<<<<<< HEAD
 }(window.jQuery);
 
 /* ========================================================================
  * Bootstrap: popover.js v3.0.0
+=======
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: popover.js v3.0.2
+>>>>>>> 1634a547754b68334a11acbc9138e2aaa92573d3
  * http://getbootstrap.com/javascript/#popovers
  * ========================================================================
  * Copyright 2013 Twitter, Inc.
@@ -1577,10 +1641,17 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     return this
   }
 
+<<<<<<< HEAD
 }(window.jQuery);
 
 /* ========================================================================
  * Bootstrap: scrollspy.js v3.0.0
+=======
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: scrollspy.js v3.0.2
+>>>>>>> 1634a547754b68334a11acbc9138e2aaa92573d3
  * http://getbootstrap.com/javascript/#scrollspy
  * ========================================================================
  * Copyright 2013 Twitter, Inc.
@@ -1736,10 +1807,17 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     })
   })
 
+<<<<<<< HEAD
 }(window.jQuery);
 
 /* ========================================================================
  * Bootstrap: tab.js v3.0.0
+=======
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: tab.js v3.0.2
+>>>>>>> 1634a547754b68334a11acbc9138e2aaa92573d3
  * http://getbootstrap.com/javascript/#tabs
  * ========================================================================
  * Copyright 2013 Twitter, Inc.
@@ -1872,10 +1950,17 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     $(this).tab('show')
   })
 
+<<<<<<< HEAD
 }(window.jQuery);
 
 /* ========================================================================
  * Bootstrap: affix.js v3.0.0
+=======
+}(jQuery);
+
+/* ========================================================================
+ * Bootstrap: affix.js v3.0.2
+>>>>>>> 1634a547754b68334a11acbc9138e2aaa92573d3
  * http://getbootstrap.com/javascript/#affix
  * ========================================================================
  * Copyright 2013 Twitter, Inc.
@@ -1999,4 +2084,8 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     })
   })
 
+<<<<<<< HEAD
 }(window.jQuery);
+=======
+}(jQuery);
+>>>>>>> 1634a547754b68334a11acbc9138e2aaa92573d3

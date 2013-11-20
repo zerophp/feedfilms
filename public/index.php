@@ -7,6 +7,16 @@ defined('APPLICATION_PATH')
 defined('APPLICATION_ENV')
     || define('APPLICATION_ENV', (getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'production'));
 
+<<<<<<< HEAD
+=======
+$paths = array(realpath(APPLICATION_PATH . '/../library'));
+if (function_exists('zend_deployment_library_path') && zend_deployment_library_path('Zend Framework 1')) {
+        $paths[] = zend_deployment_library_path('Zend Framework 1');
+}
+$paths[] = get_include_path();
+set_include_path(implode(PATH_SEPARATOR, $paths));
+
+>>>>>>> 1634a547754b68334a11acbc9138e2aaa92573d3
 // Ensure library/ is on include_path
 set_include_path(implode(PATH_SEPARATOR, array(
     realpath(APPLICATION_PATH . '/../library'),
@@ -22,4 +32,8 @@ $application = new Zend_Application(
     APPLICATION_PATH . '/configs/application.ini'
 );
 $application->bootstrap()
+<<<<<<< HEAD
             ->run();
+=======
+            ->run();
+>>>>>>> 1634a547754b68334a11acbc9138e2aaa92573d3
