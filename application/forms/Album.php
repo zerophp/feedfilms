@@ -46,6 +46,11 @@ class Application_Form_Album extends Zend_Form
 				->setmultiOptions($this->_selectOptions())
 				->setAttrib('maxlength', 200)
 				->setAttrib('size', 1);
+		$regimens = new Zend_Form_Element_Radio('regimen');
+		$regimens->setLabel('Selecciona un regimen')
+				->setMultiOptions(array('1'=>'Activo', '0'=>'Inactivo'))
+				->setRequired(true)
+				->addValidator('NotEmpty', true);
 		
 		$artist = new Zend_Form_Element_Text('artist');
 		$artist->setLabel('Artist')
@@ -53,6 +58,15 @@ class Application_Form_Album extends Zend_Form
 				->addFilter('StripTags')
 				->addFilter('StringTrim')
 				->addValidator('NotEmpty');
+		
+		$webservice = new Zend_Form_Element_MultiCheckbox('webservice');
+		$webservice->setLabel('Webservices:')
+				->setRequired(true)
+				->setValue('all')
+				->addValidator('NotEmpty', true, array('messages'=>array(Zend_Validate_NotEmpty::IS_EMPTY=>'Valor requerido')))
+				->setmultiOptions(array('all'=>'All', 'none'=>'None'))
+				->setAttrib('maxlength', 200)
+				->setAttrib('size', 1);
 		
 		$title = new Zend_Form_Element_Text('title');
 		$title->setLabel('Title')
@@ -66,6 +80,7 @@ class Application_Form_Album extends Zend_Form
 		
 		$this->addElements(array($id, 
 								$email, $password, $status, $role_id,
+								$regimens,$webservice,
 								$artist, $title, $submit));
 	}
 	
