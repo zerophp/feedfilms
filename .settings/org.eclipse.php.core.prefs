@@ -1,10 +1,6 @@
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
->>>>>>>=dd047cddd3e930d7553ad6c1925c526ca783b6ca
+>>>>>>>=a9bb8ef88006a9176dcb27bc470b5e4499472ab8
 eclipse.preferences.version=1
-<<<<<<< HEAD
-include_path=0;/feedfilms\u00055;org.eclipse.dltk.USER_LIBRARY/org.eclipse.php.core.PHPNature\#Zend Framework 1
-=======
-include_path=
->>>>>>> a9bb8ef88006a9176dcb27bc470b5e4499472ab8
+include_path=5;org.eclipse.dltk.USER_LIBRARY/org.eclipse.php.core.PHPNature\#Zend Framework 1
 use_asp_tags_as_php=false
