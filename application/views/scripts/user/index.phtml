@@ -6,16 +6,7 @@ $this->headTitle($this->title);
  'action'=>'add'));?>">Add new user</a></p>
 
 User Entries: <br />
-<dl>
-	<dt>Id</dt>
-	<dt>Email</dt>
-	<dt>Display name</dt>
-    <?php foreach ($this->entries as $entry): ?>
-    <dd><?php echo $this->escape($entry->iduser) ?></dd>
-    <dd><?php echo $this->escape($entry->email) ?></dd>
-    <dd><?php echo $this->escape($entry->display_name) ?></dd>
-    <?php endforeach ?>
-</dl>
+
 <table>
 <tr>
  <th>Id</th>
