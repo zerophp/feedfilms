@@ -117,6 +117,8 @@ class Application_Form_Album extends Zend_Form
 		return $result;
 	}
 
+<<<<<<< HEAD
+=======
 	
 	
 	
@@ -127,4 +129,5 @@ class Application_Form_Album extends Zend_Form
 	
 	
 	
+>>>>>>> f24c28ddaf796098fccc19b47d4dcca0f3776fb2
 }
