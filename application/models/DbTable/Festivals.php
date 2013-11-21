@@ -1,10 +1,10 @@
 <?php
 
-class Application_Model_DbTable_Festivales extends Zend_Db_Table_Abstract
+class Application_Model_DbTable_Festivals extends Zend_Db_Table_Abstract
 {
-	protected $_name = 'festivales';
+	protected $_name = 'festivals';
 
-	public function getFestivales($id)
+	public function getFestival($id)
 	{
 		$id = (int)$id;
 		$row = $this->fetchRow('idfestival = ' . $id);
@@ -14,7 +14,7 @@ class Application_Model_DbTable_Festivales extends Zend_Db_Table_Abstract
 		return $row->toArray();
 	}
 
-	public function addFestivales($name, $description, $date)
+	public function addFestival($name, $description, $date)
 	{
 		$zdate = new Zend_Date($date);
 		$data = array(
@@ -27,7 +27,7 @@ class Application_Model_DbTable_Festivales extends Zend_Db_Table_Abstract
 		$this->insert($data);
 	}
 
-	public function updateFestivales($id, $name, $description, $date)
+	public function updateFestival($id, $name, $description, $date)
 	{
 		$zdate = new Zend_Date($date);
 		$data = array(
@@ -39,7 +39,7 @@ class Application_Model_DbTable_Festivales extends Zend_Db_Table_Abstract
 		$this->update($data, 'idfestival = '. (int)$id);
 	}
 
-	public function deleteFestivales($id)
+	public function deleteFestival($id)
 	{
 		$this->delete('idfestival =' . (int)$id);
 	}
