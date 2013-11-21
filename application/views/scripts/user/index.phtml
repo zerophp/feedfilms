@@ -1,0 +1,39 @@
+<?php 
+$this->title = "My Users";
+$this->headTitle($this->title);
+?>
+<p><a href="<?php echo $this->url(array('controller'=>'user', 
+ 'action'=>'add'));?>">Add new user</a></p>
+
+User Entries: <br />
+<dl>
+	<dt>Id</dt>
+	<dt>Email</dt>
+	<dt>Display name</dt>
+    <?php foreach ($this->entries as $entry): ?>
+    <dd><?php echo $this->escape($entry->iduser) ?></dd>
+    <dd><?php echo $this->escape($entry->email) ?></dd>
+    <dd><?php echo $this->escape($entry->display_name) ?></dd>
+    <?php endforeach ?>
+</dl>
+<table>
+<tr>
+ <th>Id</th>
+ <th>Email</th>
+ <th>Display Name</th>
+ <th>&nbsp;</th>
+</tr>
+<?php foreach($this->entries as $entry) : ?>
+<tr>
+ <td><?php echo $this->escape($entry->iduser) ?></td>
+ <td><?php echo $this->escape($entry->email) ?></td>
+ <td><?php echo $this->escape($entry->display_name) ?></td>
+<td>
+<a href="<?php echo $this->url(array('controller'=>'user',
+'action'=>'edit', 'iduser'=>$entry->iduser));?>">Edit</a>
+<a href="<?php echo $this->url(array('controller'=>'user',
+'action'=>'delete', 'iduser'=>$entry->iduser));?>">Delete</a>
+</td>
+</tr>
+<?php endforeach; ?>
+</table>
