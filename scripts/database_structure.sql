@@ -30,6 +30,39 @@ CREATE TABLE `albums` (
   `title` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+-- -----------------------------------------------------
+-- Table `feedfilms`.`user_types`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `feedfilms`.`user_types` (
+  `idusertype` INT(11) NOT NULL AUTO_INCREMENT,
+  `usertype` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`idusertype`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `feedfilms`.`users`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `feedfilms`.`users` (
+  `iduser` INT(11) NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(255) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  `display_name` VARCHAR(255) NOT NULL,
+  `state` INT(11) NOT NULL DEFAULT '0',
+  `token` VARCHAR(255) NULL DEFAULT NULL,
+  `timeout` TIMESTAMP NULL DEFAULT NULL,
+  `idusertype` INT(11) NOT NULL,
+  PRIMARY KEY (`iduser`),
+  INDEX `fk_users_user_types_idx` (`idusertype` ASC),
+  CONSTRAINT `fk_users_user_types`
+    FOREIGN KEY (`idusertype`)
+    REFERENCES `feedfilms`.`user_types` (`idusertype`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
