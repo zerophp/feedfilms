@@ -91,3 +91,15 @@ CREATE TABLE IF NOT EXISTS `feedfilms`.`comments` (
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2013-11-20 19:58:50
+
+DROP TABLE IF EXISTS `festivals`;
+CREATE TABLE `festivals` ( 
+	`idfestival` int(11) NOT NULL AUTO_INCREMENT,
+ 	`name` text,
+	 `description` text,
+	`date` timestamp NULL DEFAULT NULL,
+    `create` timestamp NULL DEFAULT NULL,
+    `update` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`idfestival`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
