@@ -3,10 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <title>Feedfilms</title>
+	<?php 
+	    echo $this->inlineScript()->appendFile('https://code.jquery.com/jquery-1.10.2.min.js')
+	                              ->appendFile('/js/bootstrap.min.js')
+	                              ->appendFile('http://code.jquery.com/ui/1.10.3/jquery-ui.js')
+	?>
     <?php 
         echo $this->headLink()->appendStylesheet('/css/bootstrap.min.css')
                               ->appendStylesheet('/css/offcanvas.css')
+                              ->appendStylesheet('http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css')
     ?>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>        
 </head>
 <body>
 
@@ -24,10 +31,5 @@
       <?php echo $this->partial('partials/backend/footer.phtml');?>
       
     </div><!--/.container-->
-
-<?php 
-    echo $this->inlineScript()->appendFile('https://code.jquery.com/jquery-1.10.2.min.js')
-                              ->appendFile('/js/bootstrap.min.js')
-?>
 </body>
 </html>
