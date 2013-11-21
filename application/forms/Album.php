@@ -103,11 +103,17 @@ class Application_Form_Album extends Zend_Form
 		$submit = new Zend_Form_Element_Submit('submit');
 		$submit->setAttrib('id', 'submitbutton');
 		
-		$this->addElements(array($id, 
-								$email, $password, $status, $role_id,
-								$regimens,$webservice,$description,
-								$image,
-								$artist, $title, $submit));
+// 		$this->addElements(array($id, 
+// 								$email, $password, $status, $role_id,
+// 								$regimens,$webservice,$description,
+// 								$image,
+// 								$artist, $title, $submit));
+
+		$this->addElements(array($id,
+								$artist,
+								$title,
+								$submit	
+		));
 	}
 	
 	
