@@ -1,0 +1,34 @@
+<?php 
+	$this->title = "My Comments";
+	$this->headTitle($this->title);
+?>
+<p><a href="<?php echo $this->url(array('controller'=>'comments', 'action'=>'add'));?>">Add new comment</a></p>
+<table border=1>
+	<tr>
+ 		<th>Id User</th>
+ 		<th>Id Parent Comment</th>
+ 		<th>Id Film</th>
+ 		<th>Comment</th>
+ 		<th>Rating</th>
+ 		<th>Review</th>
+ 		<th>Date</th>
+ 		<th>Actions</th>
+	</tr>
+<?php foreach($this->comments as $comment) : ?>
+	<tr>
+ 		<td><?php echo $this->escape($comment->iduser);?></td>
+ 		<td><?php echo $this->escape($comment->idparentcomment);?></td>
+ 		<td><?php echo $this->escape($comment->idfilm);?></td>
+ 		<td><?php echo $this->escape($comment->body);?></td>
+ 		<td><?php echo $this->escape($comment->rating);?></td>
+ 		<td><?php echo $this->escape($comment->review);?></td>
+ 		<td><?php echo $this->escape($comment->dateadd);?></td>
+		<td>
+			<a href="<?php echo $this->url(array('controller'=>'comments',
+				'action'=>'edit', 'id'=>$comment->idcomment));?>">Edit</a>
+			<a href="<?php echo $this->url(array('controller'=>'comments',
+				'action'=>'delete', 'id'=>$comment->idcomment));?>">Delete</a>
+		</td>
+	</tr>
+<?php endforeach; ?>
+</table>
