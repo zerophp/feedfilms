@@ -8,8 +8,10 @@
  'action'=>'index'));?>" class="list-group-item">Users</a>
             <a href="<?php echo $this->url(array('controller'=>'films', 
  'action'=>'index'));?>" class="list-group-item">Films</a>
-            <a href="#" class="list-group-item">Festivals</a>
-            <a href="/comments" class="list-group-item">Comments</a>
+            <a href="<?php echo $this->url(array('controller'=>'festivales', 
+ 'action'=>'index'));?>" class="list-group-item">Festivals</a>
+            <a href="<?php echo $this->url(array('controller'=>'comments', 
+ 'action'=>'index'));?>" class="list-group-item">Comments</a>
           </div>
 
         </div><!--/span-->
