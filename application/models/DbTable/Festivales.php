@@ -16,10 +16,11 @@ class Application_Model_DbTable_Festivales extends Zend_Db_Table_Abstract
 
 	public function addFestivales($name, $description, $date)
 	{
+		$zdate = new Zend_Date($date);
 		$data = array(
 				'name' => $name,
 				'description' => $description,
-				'date' => $date,
+				'date' => $zdate->toString('YYYY-MM-dd hh:mm:ss'),
 				'create' => date('Y-m-d H:i:s', time()),
 				'update' => date('Y-m-d H:i:s', time())
 		);
@@ -28,10 +29,11 @@ class Application_Model_DbTable_Festivales extends Zend_Db_Table_Abstract
 
 	public function updateFestivales($id, $name, $description, $date)
 	{
+		$zdate = new Zend_Date($date);
 		$data = array(
 				'name' => $name,
 				'description' => $description,
-				'date' => date('Y-m-d H:i:s', time()),
+				'date' => $zdate->toString('YYYY-MM-dd hh:mm:ss'),
 				'update' => date('Y-m-d H:i:s', time())
 		);
 		$this->update($data, 'idfestival = '. (int)$id);

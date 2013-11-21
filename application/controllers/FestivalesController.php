@@ -57,7 +57,10 @@ class FestivalesController extends Zend_Controller_Action
             $id = $this->_getParam('id', 0);
             if ($id > 0) {
                 $festivals = new Application_Model_DbTable_Festivales();
-                $form->populate($festivals->getFestivales($id));
+            	$festival = $festivals->getFestivales($id);
+            	$date = new Zend_Date($festival['date']);
+            	$festival['date'] = $date->toString('MM/dd/YYYY');
+                $form->populate($festival);
             }
         }
     }
@@ -74,7 +77,7 @@ class FestivalesController extends Zend_Controller_Action
             $this->_helper->redirector('index');
         } else {
             $id = $this->_getParam('id', 0);
-            $festivals = new Application_Model_DbTable_Festival();
+            $festivals = new Application_Model_DbTable_Festivales();
             $this->view->festival = $festivals->getFestivales($id);
         }
     }
