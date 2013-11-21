@@ -7,13 +7,6 @@ defined('APPLICATION_PATH')
 defined('APPLICATION_ENV')
     || define('APPLICATION_ENV', (getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'production'));
 
-$paths = array(realpath(APPLICATION_PATH . '/../library'));
-if (function_exists('zend_deployment_library_path') && zend_deployment_library_path('Zend Framework 1')) {
-        $paths[] = zend_deployment_library_path('Zend Framework 1');
-}
-$paths[] = get_include_path();
-set_include_path(implode(PATH_SEPARATOR, $paths));
-
 // Ensure library/ is on include_path
 set_include_path(implode(PATH_SEPARATOR, array(
     realpath(APPLICATION_PATH . '/../library'),
