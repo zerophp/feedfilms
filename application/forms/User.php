@@ -69,7 +69,13 @@ class Application_Form_User extends Zend_Form
     
     protected function _selectOptions()
     {
-    	$result = array(1=>'Cineasta', 2=>'Productora', 3=>'Jurado');
+    	//$result = array(1=>'Cineasta', 2=>'Productora', 3=>'Jurado');
+    	//return $result;
+    	$result = array();
+    	$usertype = new Application_Model_UserTypeMapper();
+    	$result=$usertype->fetchAll();
+    	
+    	
     	return $result;
     }
 }
