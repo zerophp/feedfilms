@@ -1,4 +1,4 @@
-/.buildpath
+.buildpath
 /.project
 /.vimproject
 /.zfproject.xml
@@ -9,3 +9,4 @@ README.txt
 demos/
 extras/documentation
 .idea
+.settings

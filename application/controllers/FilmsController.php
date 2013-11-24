@@ -56,7 +56,7 @@ class FilmsController extends Zend_Controller_Action{
 				$film = new Application_Model_Entity_Film();
                 $mapper  = new Application_Model_FilmMapper();
                 $film = $mapper->find($id, $film);
-                $formfilm["id"] = $film->getId();
+              	$formfilm["id"] = $film->getId();
                 $formfilm["iduser"] = $film->getIduser();
                 $formfilm["title"] = $film->getTitle();
                 $formfilm["director"] = $film->getDirector();
