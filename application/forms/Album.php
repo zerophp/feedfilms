@@ -117,14 +117,5 @@ class Application_Form_Album extends Zend_Form
 		return $result;
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

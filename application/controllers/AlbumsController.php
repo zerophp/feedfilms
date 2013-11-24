@@ -1,3 +1,4 @@
+
 <?php
 
 class albumsController extends Zend_Controller_Action
@@ -77,3 +78,4 @@ class albumsController extends Zend_Controller_Action
 	}
 
 }
+

@@ -36,7 +36,7 @@ class Application_Model_FilmMapper
         //Zend_Debug::dump($film->getId());
         //die;
 
-        if (null === ($id = $film->getId())) {
+        if (0 === ($id = $film->getId())) {
             unset($data['idfilm']);
             $this->getDbTable()->insert($data);
         } else {

@@ -63,6 +63,22 @@ CREATE TABLE IF NOT EXISTS `feedfilms`.`users` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+
+-- -----------------------------------------------------
+-- Table `feedfilms`.`users`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `feedfilms`.`comments` (
+  `idcomment` INT(11) NOT NULL AUTO_INCREMENT,
+  `iduser` INT(11) NOT NULL,
+  `idparentcomment` INT(11) NOT NULL DEFAULT '0',
+  `idfilm` INT(11) NOT NULL,
+  `body` text NOT NULL,
+  `rating` INT(11) DEFAULT NULL,
+  `review` INT(11) DEFAULT NULL,
+  `dateadd` datetime NOT NULL,
+  PRIMARY KEY (`idcomment`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -75,3 +91,15 @@ ENGINE = InnoDB;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2013-11-20 19:58:50
+
+DROP TABLE IF EXISTS `festivals`;
+CREATE TABLE `festivals` ( 
+	`idfestival` int(11) NOT NULL AUTO_INCREMENT,
+ 	`name` text,
+	 `description` text,
+	`date` timestamp NULL DEFAULT NULL,
+    `create` timestamp NULL DEFAULT NULL,
+    `update` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`idfestival`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
