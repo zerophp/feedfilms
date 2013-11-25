@@ -1,17 +1,15 @@
 <?php
-$this->title = "Delete album";
+$this->title = "Delete user";
 $this->headTitle($this->title);
-
 ?>
 <p>Are you sure that you want to delete
-'<?php echo $this->escape($this->album['title']); ?>' by
-'<?php echo $this->escape($this->album['artist']); ?>'?
+'<?php echo $this->escape($this->user['display_name']); ?>' by
+'<?php echo $this->escape($this->user['email']); ?>'?
 </p>
 <form action="<?php echo $this->url(array('action'=>'delete')); ?>" method="post">
 <div>
-<input type="hidden" name="id" value="<?php echo $this->album['id']; ?>" />
+<input type="hidden" name="id" value="<?php echo $this->user['iduser']; ?>" />
 <input type="submit" name="del" value="Yes" />
 <input type="submit" name="del" value="No" />
-
 </div>
 </form>

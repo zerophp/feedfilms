@@ -12,7 +12,13 @@ class IndexController extends Zend_Controller_Action
     public function indexAction()
     {
         // action body      
-       $this->view->title="home";
+       
+       $this->view->title=Zend_Registry::get('APIKey');
+       
+//        Zend_Debug::dump($_SESSION, "Session:", true);
+//        echo "<pre>";
+//        print_r(Zend_Registry::getInstance());
+//        echo "</pre>";
 
     }
     

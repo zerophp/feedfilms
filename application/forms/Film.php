@@ -52,6 +52,13 @@ class Application_Form_Film extends Zend_Form
 	{
 		$result = array(1=>'Alex', 2=>'Agustin');
 		return $result;
+		
+		$result = array();
+		$usertype = new Application_Model_UserMapper();
+		$result=$usertype->fetchAll();
+			
+			
+		return $result;
 	}
 
 	

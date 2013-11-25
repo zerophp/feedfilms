@@ -1,0 +1,32 @@
+<?php 
+$this->title = "My Festivals";
+$this->headTitle($this->title);
+?>
+<p><a href="<?php echo $this->url(array('controller'=>'festivals', 
+'action'=>'add'));?>">Add new festival</a></p>
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Artist</th>
+		<th>Date</th>
+		<th>Created</th>
+		<th>Updated</th>
+	</tr>
+	<?php foreach($this->festivals as $festival) : ?>
+	<?php $date = new Zend_Date($festival->date); ?>
+	<tr>
+		<td><?php echo $this->escape($festival->name);?></td>
+		<td><?php echo $this->escape($festival->description);?></td>
+		<td><?php echo $this->escape($date->toString('MM/dd/YYYY'));?></td>
+		<td><?php echo $this->escape(new Zend_Date($festival->create));?></td>
+		<td><?php echo $this->escape(new Zend_Date($festival->update));?></td>
+
+		<td>
+			<a href="<?php echo $this->url(array('controller'=>'festivals',
+			'action'=>'edit', 'id'=>$festival->idfestival));?>">Edit</a>
+<a href="<?php echo $this->url(array('controller'=>'festivals',
+'action'=>'delete', 'id'=>$festival->idfestival));?>">Delete</a>
+</td>
+</tr>
+<?php endforeach; ?>
+</table>

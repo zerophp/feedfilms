@@ -29,6 +29,11 @@ INSERT INTO `feedfilms`.`user_types` (`usertype`) VALUES ('Cineasta');
 INSERT INTO `feedfilms`.`user_types` (`usertype`) VALUES ('Productora');
 INSERT INTO `feedfilms`.`user_types` (`usertype`) VALUES ('Jurado');
 
+INSERT INTO `feedfilms`.`comments`
+	(`iduser`,`idparentcomment`,`idfilm`,`body`,`rating`,`review`,`dateadd`)
+	VALUES (1,1,2,'this is a comment',1,1,Now());
+
+
 /*!40000 ALTER TABLE `albums` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

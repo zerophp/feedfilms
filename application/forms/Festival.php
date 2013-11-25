@@ -24,6 +24,7 @@ class Application_Form_Festival extends Zend_Form
 		$date = new Zend_Form_Element_Text('date');
 		$date->setLabel('Date')
 				->addFilter('StringTrim')
+				->addValidator('date', 'MM/dd/YYYY', array('MM/dd/YYYY'))
 				->addValidator('NotEmpty');
 
 		$submit = new Zend_Form_Element_Submit('submit');
