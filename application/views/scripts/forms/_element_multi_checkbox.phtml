@@ -1,0 +1,18 @@
+<div class="<?= $this->class ?>">
+    <?= $this->formLabel($this->element->getName(),
+$this->element->getLabel()) ?>
+    <?=
+        str_replace("<label","<label style='float:left'",$this->{$this->element->helper}(
+        $this->element->getName(),
+        $this->element->getValue(),
+        $this->element->getAttribs(),
+        $this->element->getMultiOptions(),
+        ' '
+    )) ?>
+    <? if($this->element->getMessages()):?>
+    <?= $this->formErrors($this->element->getMessages()) ?>
+    <? endif ?>
+    <? if($this->element->getDescription()):?>
+    <div class="hint"><?= $this->element->getDescription() ?></div>
+    <? endif ?>
+</div> 

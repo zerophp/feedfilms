@@ -14,14 +14,21 @@ class Application_Form_User extends Zend_Form
         
         $email = new Zend_Form_Element_Text('email');
         $email->setLabel('Email')
-        ->setRequired(true)
-        ->addValidator('NotEmpty', true)
-        ->addFilter('StripTags')
-        ->addFilter('StringTrim')
-        ->addValidator('StringLength',false,array(3,200))
-        ->addValidator('emailAddress', true)
-        ->setAttrib('size', 30)
-        ->setAttrib('maxlength', 80);
+		        ->setRequired(true)
+		        ->addValidator('NotEmpty', true)
+		        ->addFilter('StripTags')
+		        ->addFilter('StringTrim')
+		        ->addValidator('StringLength',false,array(3,200))
+		        ->addValidator('emailAddress', true)
+		        ->setAttrib('size', 30)
+		        ->setAttrib('maxlength', 80)
+		        ->setAttrib('placeholder', 'Email...')
+		        ->setDescription('User Description')
+		        ->setOptions(array('class'=>'form-control'))
+		        ->setDecorators(array(array('ViewScript', array(
+		        		'viewScript' => 'forms/_element_text.phtml'
+		        ))));
+		        ;
         
         $password = new Zend_Form_Element_Password('password');
         $password->setLabel('Password')
@@ -31,7 +38,11 @@ class Application_Form_User extends Zend_Form
         ->addFilter('StringTrim')
         ->addValidator('StringLength',false,array(3,20))
         ->setAttrib('size', 30)
-        ->setAttrib('maxlength', 80);
+        ->setAttrib('maxlength', 80)
+        ->setOptions(array('class'=>'form-control'))
+        ->setDecorators(array(array('ViewScript', array(
+		        		'viewScript' => 'forms/_element_text.phtml'
+		        ))));
         
         $display_name = new Zend_Form_Element_Text('display_name');
         $display_name->setLabel('Display Name')
@@ -41,7 +52,54 @@ class Application_Form_User extends Zend_Form
         ->addFilter('StringTrim')
         ->addValidator('StringLength',false,array(3,200))
         ->setAttrib('size', 30)
-        ->setAttrib('maxlength', 255);
+        ->setAttrib('maxlength', 255)
+        ->setOptions(array('class'=>'form-control'))
+        ->setDecorators(array(array('ViewScript', array(
+		        		'viewScript' => 'forms/_element_text.phtml'
+		        ))));
+        
+        $description = new Zend_Form_Element_Textarea('description');
+        $description->setLabel('Description')
+        ->setRequired(true)
+        ->addValidator('NotEmpty', true)
+        ->addFilter('StripTags')
+        ->addFilter('StringTrim')
+        ->addValidator('StringLength',false,array(3,200))
+        ->setAttrib('size', 30)
+        ->setAttrib('maxlength', 255)
+        ->setOptions(array('class'=>'form-control'))
+        ->setDecorators(array(array('ViewScript', array(
+        		'viewScript' => 'forms/_element_text.phtml'
+        ))));
+        
+        $nid = new Zend_Form_Element_Text('nid');
+        $nid->setLabel('National ID')
+        ->setRequired(true)
+        ->addValidator('NotEmpty', true)
+        ->addFilter('StripTags')
+        ->addFilter('StringTrim')
+        ->addValidator('StringLength',false,array(3,200))
+        ->setAttrib('size', 30)
+        ->setAttrib('maxlength', 255)
+        ->setOptions(array('class'=>'form-control'))
+        ->setDecorators(array(array('ViewScript', array(
+        		'viewScript' => 'forms/_element_text.phtml'
+        ))));
+        
+        $url = new Zend_Form_Element_Text('url');
+        $url->setLabel('URL')
+	        ->setRequired(true)
+	        ->addValidator('NotEmpty', true)
+	        ->addFilter('StripTags')
+	        ->addFilter('StringTrim')
+	        ->addValidator('hostname', true)
+	        ->addValidator('StringLength',false,array(3,200))
+	        ->setAttrib('size', 30)
+	        ->setAttrib('maxlength', 255)
+	        ->setOptions(array('class'=>'form-control'))
+	        ->setDecorators(array(array('ViewScript', array(
+	        		'viewScript' => 'forms/_element_text.phtml'
+	        ))));
         
         $state = new Zend_Form_Element_Select('state');
         $state->setLabel('State')
@@ -64,6 +122,7 @@ class Application_Form_User extends Zend_Form
 		
 		$this->addElements(array($id, 
 								$email, $password, $display_name, $state,
+								$description,$nid,$url,
 								$idusertype, $submit));
     }
     

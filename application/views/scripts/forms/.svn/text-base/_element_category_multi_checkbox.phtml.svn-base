@@ -1,0 +1,16 @@
+<div class="<?= $this->class ?>">
+    <?=
+        str_replace("</label>","</div>",str_replace("<label for","<div class",$this->{$this->element->helper}(
+        $this->element->getName(),
+        $this->element->getValue(),
+        $this->element->getAttribs(),
+        $this->element->getMultiOptions(),
+        ' '
+    ))) ?>
+    <? if($this->element->getMessages()):?>
+    <?= $this->formErrors($this->element->getMessages()) ?>
+    <? endif ?>
+    <? if($this->element->getDescription()):?>
+    <div class="hint"><?= $this->element->getDescription() ?></div>
+    <? endif ?>
+</div> 
