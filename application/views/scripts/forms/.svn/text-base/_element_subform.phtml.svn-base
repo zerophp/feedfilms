@@ -1,0 +1,7 @@
+<?=$this->element->content;?>
+<?php 
+//Zend_Debug::dump($this->element, "element", true);
+
+?>
+
+

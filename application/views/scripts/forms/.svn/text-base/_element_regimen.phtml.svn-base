@@ -1,0 +1,28 @@
+<table class="not_selected" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<th scope="row">
+			<?php echo $this->{$this->element->helper}
+								($this->element->getName(),
+								 $this->element->getValue(),
+								 $this->element->getAttribs(),
+								 $this->element->getMultiOptions(),
+								 "&nbsp;\n")?>
+		</th>
+		<td>
+			<strong><?=$this->translate ( $this->element->getLabel () );?></strong><br />
+			<?=@$room ['Hotel_room_extra'];?>
+		</td>
+		<td>
+			<span class="blu"><?php echo $this->element->getDescription ()?> €</span>
+		</td>
+	</tr>
+</table>
+
+
+
+
+
+
+
+
+

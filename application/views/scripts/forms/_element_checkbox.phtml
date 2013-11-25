@@ -1,0 +1,16 @@
+<div class="<?=$this->class;?>" id="fly">	
+	<?php echo $this->{$this->element->helper}(
+								        $this->element->getName(),
+								        $this->element->getValue(),
+								        $this->element->getAttribs(),
+								        $this->element->getMultiOptions(),
+								        "&nbsp;\n"
+								    ) ?>
+	<label><?=$this->translate($this->element->getLabel());?></label>
+	<?php if($this->element->getMessages()):?>
+		<span class="system negative"><?php echo $this->formErrors($this->element->getMessages()) ?></span>
+	<?php endif;?>
+	<?php if($this->element->getDescription()):?>
+		<div class="hint"><?php echo $this->element->getDescription() ?></div>
+	<?php endif;?>
+</div>
