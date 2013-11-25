@@ -5,31 +5,26 @@ class AuthorController extends Zend_Controller_Action
 
 	public function init()
 	{
-		/* Initialize action controller here */
+		$this->_helper->layout->setLayout("layout2");
 	}
 
 	public function loginAction()
 	{
-		// action body
-		$this->_helper->layout->setLayout("layout2");
 		$this->view->title="Hola holita vecinito";
+		$this->render("login");
 	}
 
 	public function logoutAction()
 	{
-		// action body
-		$this->_helper->layout->setLayout("layout2");
-		$this->view->title="logout";
 		$this->render("login");
 		 
 	}
 
 	public function registerAction()
 	{
-		// action body
-		$this->_helper->layout->setLayout("layout2");
-		$this->view->title="register";
-		$this->render("login");
+		$form = new Application_Form_Register();	
+		$this->view->form = $form;
+		$this->render("register");
 	}
 
 

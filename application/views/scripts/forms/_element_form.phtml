@@ -1,0 +1,13 @@
+<form action="<?php echo $this->element->getAction(); ?>" method="<?php echo $this->element->getMethod(); ?>" enctype="<?php echo $this->element->getEnctype(); ?>" class="form-signin">
+  <h2 class="form-signin-heading">Registrarse</h2>
+  
+  <?php 
+  $elements = $this->element->getElements();
+  foreach($elements as $key => $value):
+  	echo $value;
+  endforeach;
+  //echo $this->element->getElements();
+  
+  //echo $this->element->getElement( 'email' ); ?>
+</form>
+
