@@ -6,6 +6,8 @@ class Application_Model_Festivals
     protected $_name;
     protected $_description;
     protected $_date;
+    protected $_update;
+    protected $_create;
 
     public function __construct(array $options = null)
     {
@@ -18,7 +20,7 @@ class Application_Model_Festivals
     {
     	$method = 'set' . $name;
     	if (('mapper' == $name) || !method_exists($this, $method)) {
-    		throw new Exception('Invalid user property');
+    		throw new Exception('Invalid festival property');
     	}
     	$this->$method($value);
     }
@@ -27,7 +29,7 @@ class Application_Model_Festivals
     {
     	$method = 'get' . $name;
     	if (('mapper' == $name) || !method_exists($this, $method)) {
-    		throw new Exception('Invalid user property');
+    		throw new Exception('Invalid festival property');
     	}
     	return $this->$method();
     }
@@ -55,7 +57,7 @@ class Application_Model_Festivals
 	 * @return the $_name
 	 */
 	public function getName() {
-		return $this->_password;
+		return $this->_name;
 	}
 
 	/**
@@ -73,6 +75,20 @@ class Application_Model_Festivals
 	}
 
 	/**
+	 * @return the $_date
+	 */
+	public function getCreate() {
+		return $this->_create;
+	}
+
+	/**
+	 * @return the $_date
+	 */
+	public function getUpdate() {
+		return $this->_update;
+	}
+	
+	/**
 	 * @param field_type $_idfestival
 	 */
 	public function setIdfestival($_idfestival) {
@@ -84,7 +100,7 @@ class Application_Model_Festivals
 	 * @param field_type $_name
 	 */
 	public function setName($_name) {
-		$this->_name = _name;
+		$this->_name = $_name;
 		return $this;
 	}
 
@@ -99,10 +115,36 @@ class Application_Model_Festivals
 	/**
 	 * @param field_type $_date
 	 */
-	public function setIduser($_date) {
+	public function setDate($_date) {
 		$this->_date = $_date;
 		return $this;
 	}
 
+	/**
+	 * @param field_type $_date
+	 */
+	public function setCreate($_date) {
+		$this->_create = $_date;
+		return $this;
+	}
+
+	/**
+	 * @param field_type $_date
+	 */
+	public function setUpdate($_date) {
+		$this->_update = $_date;
+		return $this;
+	}
+
+	public function __toArray() {
+		return array(
+			'idfestival' => $this->_idfestival,
+			'name' => $this->_name,
+			'description' => $this->_description,
+			'date' => $this->_date,
+			'update' => $this->_update,
+			'create' => $this->create,
+		);
+	}
 }
 

@@ -24,17 +24,19 @@ class Application_Model_FestivalsMapper
         return $this->_dbTable;
     }
 
-    public function save(Application_Model_User $festival)
+    public function save(Application_Model_Festivals $festival)
     {
         $data = array(
-        	'idfestival'  => $festival->getIdfestival(),
+        	'idfestival'  => ($festival->getIdfestival() ? $festival->getIdfestival() : NULL),
             'name'   => $festival->getName(),
         	'description' => $festival->getDescription(),
         	'date' => $festival->getDate(),
+        	'update' => date('Y-m-d H:i:s', time())
         );
 
-        if (null === ($id = $festival->getIdfestival())) {
-            unset($data['iduser']);
+        if (NULL == ($id = $data['idfestival'])) {
+            unset($data['idfestival']);
+            $data['create'] = date('Y-m-d H:i:s', time());
             $this->getDbTable()->insert($data);
         } else {
             $this->getDbTable()->update($data, array('idfestival = ?' => $id));
@@ -48,29 +50,16 @@ class Application_Model_FestivalsMapper
             return;
         }
         $row = $result->current();
-        $user->setIduser($row->iduser);
-        $user->setEmail($row->email);
-        $user->setPassword($row->password);
-        $user->setDisplay_name($row->display_name);
-        $user->setState($row->state);
-        $user->setIdusertype($row->idusertype);
-        
-        return $row->toArray();
+        $festival = new Application_Model_Festivals($row->toArray());
+        return $festival;
     }
-   
 
     public function fetchAll()
     {
         $resultSet = $this->getDbTable()->fetchAll();
         $entries   = array();
         foreach ($resultSet as $row) {
-            $entry = new Application_Model_Festival();
-            $entry->setIduser($row->iduser);
-            $entry->setPassword($row->password);
-            $entry ->setEmail($row->email);
-            $entry->setDisplay_name($row->display_name);
-        	$entry->setState($row->state);
-        	$entry->setIdusertype($row->idusertype);
+            $entry = new Application_Model_Festivals($row->toArray());
             $entries[] = $entry;
         }
         return $entries;
@@ -79,9 +68,8 @@ class Application_Model_FestivalsMapper
     public function delete($id)
     {
     	$user = new Application_Model_DbTable_User();
-    	$where = $user->getAdapter()->quoteInto('iduser = ?', (int)$id);
+    	$where = $user->getAdapter()->quoteInto('idfestival = ?', (int)$id);
     	$this->getDbTable()->delete($where);
-    	
     }
 }
 
