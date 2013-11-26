@@ -1,0 +1,23 @@
+<div class="form-group <?=($this->element->getMessages())?'has-error':'';?>" >
+
+	<label>
+		<?=$this->translate($this->element->getLabel());?>
+	</label>
+	 <div class="control-label">
+			<?php echo $this->{$this->element->helper}(
+		        $this->element->getName(),
+		        $this->element->getValue(),
+		        $this->element->getAttribs()
+		    ) ?>
+	
+	<span class="help-inline">
+		<?php echo $this->element->getDescription() ?>		
+	</span>
+	</div>
+	<?php if($this->element->getMessages()):?>
+		<span class="help-block">
+			<?php echo $this->formErrors($this->element->getMessages()) ?>
+		</span>
+	<?php endif;?> 
+</div>
+

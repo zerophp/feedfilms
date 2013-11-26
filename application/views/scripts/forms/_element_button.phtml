@@ -1,0 +1,10 @@
+
+		<span class="<?=$this->class;?>">
+			<span><?=$this->translate($this->element->getLabel());?></span>
+			<?= $this->{$this->element->helper}(
+		        $this->element->getName(),
+		        $this->element->getValue(),
+		        $this->element->getAttribs()
+		    ) ?>
+	    </span>		 
+
