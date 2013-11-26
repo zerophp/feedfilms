@@ -42,13 +42,17 @@ class Application_Form_Author extends Zend_Form
         ));
 
         $submit = new Zend_Form_Element_Submit('submit');
-		$submit->setAttrib('id', 'submitbutton');
+        $submit->setAttrib('id', 'submitbutton');
 
-		$this->addElements(array($id,
+        $clear_form = new Zend_Form_Element_Submit('clear');
+        $clear_form->setAttrib('id', 'clear');
+
+        $this->addElements(array($id,
                                 $email,
                                 $password,
 								$captcha,
-                                $submit
+                                $submit,
+                                $clear_form
 		));
 	}
 }

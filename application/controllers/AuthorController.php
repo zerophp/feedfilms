@@ -18,8 +18,13 @@ class AuthorController extends Zend_Controller_Action
         $this->view->form = $form;
 
         if ($this->getRequest()->isPost()) {
+
             $formData = $this->getRequest()->getPost();
-            if ($form->isValid($formData)) {
+            $form->populate($formData);
+
+            if($form->clear->isChecked()){
+                $form->reset();
+            }else if($form->isValid($formData)) {
                 $db = $this->_getParam('db');
                 $authAdapter = new Zend_Auth_Adapter_DbTable(
                     $db,
@@ -35,8 +40,6 @@ class AuthorController extends Zend_Controller_Action
                     $this->_helper->redirector->goToSimple('index', 'backend');
                 }
                 $this->_helper->FlashMessenger('Bad credentials!!!');
-            } else {
-                $form->populate($formData);
             }
         }
 

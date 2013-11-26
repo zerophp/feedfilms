@@ -49,8 +49,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     	// TODO
     	// Set cache for speedup
     	
-    	$translate = new Zend_Translate('tmx', dirname(__FILE__) .'/languages/info.xml', $_SESSION['default']['language']);
-    	Zend_Registry::set('Zend_Translate', $translate);
+    	//$translate = new Zend_Translate('tmx', dirname(__FILE__) .'/languages/info.xml', $_SESSION['default']['language']);
+    	//Zend_Registry::set('Zend_Translate', $translate);
     }
 
     protected function _initEmail()
