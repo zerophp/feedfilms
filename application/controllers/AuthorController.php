@@ -15,6 +15,10 @@ class AuthorController extends Zend_Controller_Action
 
 	public function loginAction()
 	{
+		
+		
+		Zend_Debug::dump($_POST);
+		
 		// action body
 		$this->_helper->layout->setLayout("layout2");
 		$this->view->title="Login";

@@ -4,6 +4,9 @@ class Application_Form_Author extends Zend_Form
 {
 	public function init()
 	{
+		
+		
+		
 		$this->setMethod('post');
 		$this->setName('album');
 
@@ -30,16 +33,25 @@ class Application_Form_Author extends Zend_Form
 				->addValidator('StringLength',false,array(6,20))
 				->setAttrib('size', 30)
 				->setAttrib('maxlength', 80);
-
-        $captcha = new Zend_Form_Element_Captcha('foo', array(
-            'label' => "Please verify you're a human",
-            'captcha' => 'Figlet',
-            'captchaOptions' => array(
-                'captcha' => 'Figlet',
-                'wordLen' => 6,
-                'timeout' => 300,
-            ),
-        ));
+		
+		
+		
+		$recaptcha = new Zend_Service_ReCaptcha(
+					Zend_Registry::get("recaptcha.public"), 
+					Zend_Registry::get("recaptcha.private"));
+		
+		$captcha = new Zend_Form_Element_Captcha('captcha',
+				array(
+						'captcha'       => 'ReCaptcha',
+						'captchaOptions' => array(
+								'captcha' => 'ReCaptcha', 
+								'service' => $recaptcha),
+						'ignore' => true
+				)
+		);
+		
+		
+        
 
         $submit = new Zend_Form_Element_Submit('submit');
 		$submit->setAttrib('id', 'submitbutton');
@@ -49,6 +61,10 @@ class Application_Form_Author extends Zend_Form
                                 $password,
 								$captcha,
                                 $submit
+		));
+		// And finally add some CSRF protection
+		$this->addElement('hash', 'csrf', array(
+				'ignore' => true,
 		));
 	}
 }

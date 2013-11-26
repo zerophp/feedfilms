@@ -106,6 +106,13 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     	Zend_Registry::set("signature", $verify['signature']);
     	Zend_Registry::set("timeout", $verify['timeout']);
     }
+    
+    protected function _initReCaptcha()
+    {
+    	$recaptcha = $this->getOption('recaptcha');
+    	Zend_Registry::set("recaptcha.public", $recaptcha['public']);
+    	Zend_Registry::set("recaptcha.private", $recaptcha['private']);
+    }
 }
 
 
