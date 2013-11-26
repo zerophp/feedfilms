@@ -3,13 +3,13 @@ $this->title = "Delete festival";
 $this->headTitle ( $this->title );
 ?>
 <p>Are you sure that you want to delete
-'<?php echo $this->escape($this->festival['name']); ?>'?
+'<?php echo $this->escape($this->festival->name); ?>'?
 </p>
 <form action="<?php echo $this->url(array('action'=>'delete')); ?>"
 	method="post">
 	<div>
 		<input type="hidden" name="id"
-			value="<?php echo $this->festival['idfestival']; ?>" /> <input
+			value="<?php echo $this->festival->idfestival; ?>" /> <input
 			type="submit" name="del" value="Yes" /> <input type="submit"
 			name="del" value="No" />
 	</div>
