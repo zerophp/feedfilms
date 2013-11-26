@@ -32,6 +32,7 @@ class Application_Model_UserMapper
         	'password' => $user->getPassword(),
         	'display_name' => $user->getDisplay_name(),
             'state' 	=> $user->getState(),
+        	'token' => $user->getToken(),
             'idusertype' => $user->getIdusertype(),
         );
 
