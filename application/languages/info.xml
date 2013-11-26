@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+ <header creationtoolversion="1.0.0" datatype="winres" segtype="sentence"
+         adminlang="en-us" srclang="de-at" o-tmf="abc"
+         creationtool="XYZTool" >
+ </header>
+ <body>
+ <tu tuid='Language'>
+   <tuv xml:lang="en"><seg>English</seg></tuv>
+   <tuv xml:lang="es"><seg>Español</seg></tuv>
+   <tuv xml:lang="de"><seg>Deutsch</seg></tuv>
+   <tuv xml:lang="fr"><seg>Français</seg></tuv>
+   <tuv xml:lang="it"><seg>Italiano</seg></tuv>
+   <tuv xml:lang="nl"><seg>Nederlands</seg></tuv>
+   <tuv xml:lang="pl"><seg>Polski</seg></tuv>
+   <tuv xml:lang="ru"><seg>Русский</seg></tuv>
+   <tuv xml:lang="ca"><seg>Català</seg></tuv>
+  </tu>
+  <tu tuid='SEE ALL NEWS'>
+   <tuv xml:lang="en"><seg>SEE ALL NEWS</seg></tuv>
+   <tuv xml:lang="es"><seg>TODAS LAS NOTICIAS</seg></tuv>   
+  </tu>
+  <tu tuid='Latest News'>
+   <tuv xml:lang="en"><seg>Latest News</seg></tuv>
+   <tuv xml:lang="es"><seg>Noticias</seg></tuv>   
+  </tu>
+  <tu tuid='Contact Info'>
+   <tuv xml:lang="en"><seg>Contact Info</seg></tuv>
+   <tuv xml:lang="es"><seg>Contactanos</seg></tuv>   
+  </tu>
+  <tu tuid='Contact us'>
+   <tuv xml:lang="en"><seg>Please don’t hesitate to contact us if you have any questions or in order to comission work. Here are our contact details</seg></tuv>
+   <tuv xml:lang="es"><seg>Si tienes alguna duda, no dudes en contactar con nosotros. También podemos ayudarte a organizar tu proyecto.</seg></tuv>   
+  </tu>
+  <tu tuid='Web'>
+   <tuv xml:lang="en"><seg>Web</seg></tuv>
+   <tuv xml:lang="es"><seg>Web</seg></tuv>   
+  </tu>
+  <tu tuid='Email'>
+   <tuv xml:lang="en"><seg>E-mail</seg></tuv>
+   <tuv xml:lang="es"><seg>Email</seg></tuv>   
+  </tu>
+  <tu tuid='OPEN CONTACT FORM'>
+   <tuv xml:lang="en"><seg>OPEN CONTACT FORM</seg></tuv>
+   <tuv xml:lang="es"><seg>CONTÁCTANOS</seg></tuv>   
+  </tu>
+  <tu tuid='All rights reserved'>
+   <tuv xml:lang="en"><seg>All rights reserved</seg></tuv>
+   <tuv xml:lang="es"><seg>Todos los derechos reservados</seg></tuv>   
+  </tu>
+  <tu tuid='Orkestor, Audiovisual Resource Management'>
+   <tuv xml:lang="en"><seg>Orkestor, Audiovisual Resource Management</seg></tuv>
+   <tuv xml:lang="es"><seg>Orkestor, Administrador de Recursos Audiovisuales</seg></tuv>   
+  </tu>
+  <tu tuid='How to'>
+   <tuv xml:lang="en"><seg>How to</seg></tuv>
+   <tuv xml:lang="es"><seg>Cómo hago...?</seg></tuv>   
+  </tu>
+  <tu tuid='what is'>
+   <tuv xml:lang="en"><seg>is an application for management resources of an audiovisual production: scheduling, script breakdown, order priorities and print reports, in an intuitive, easy to use, and time saving fashion. Here, the workgroup of the production can work as a Team, sharing information all the time.</seg></tuv>
+   <tuv xml:lang="es"><seg>es una herramienta para manejar los recursos de una producción audivovisual: programar tiempos, desglosar, ordenar prioridades y generar reportes. Todo esto trabajando de una manera intuitiva, facil de usar y rápida, potenciando el trabajo en equipo y compartiendo la información en todo momento.</seg></tuv>   
+  </tu>
+  <tu tuid='Start now'>
+   <tuv xml:lang="en"><seg></seg></tuv>
+   <tuv xml:lang="es"><seg>Cómo empezar con Orkestor. Descubre como utilizar las herramientas de una forma fácil y rápida mientras trabajas en tu proyecto.</seg></tuv>   
+  </tu>
+  <tu tuid='More info'>
+   <tuv xml:lang="en"><seg>MORE INFO</seg></tuv>
+   <tuv xml:lang="es"><seg>MÁS INFORMACIÓN</seg></tuv>   
+  </tu>
+  <tu tuid='Log out'>
+   <tuv xml:lang="en"><seg>Log out</seg></tuv>
+   <tuv xml:lang="es"><seg>Salir</seg></tuv>
+      
+  </tu>
+  <tu tuid='Welcome'>
+   <tuv xml:lang="en"><seg>Welcome</seg></tuv>
+   <tuv xml:lang="es"><seg>Bienvenido</seg></tuv>
+    <tuv xml:lang="ca"><seg>Benvingut</seg></tuv>      
+  </tu>
+  <tu tuid='Logout'>
+   <tuv xml:lang="en"><seg>Logout</seg></tuv>
+   <tuv xml:lang="es"><seg>Salir</seg></tuv>
+   <tuv xml:lang="ca"><seg>Sortir</seg></tuv>    
+  </tu>
+  <tu tuid='Buscar'>
+   <tuv xml:lang="en"><seg>search</seg></tuv>
+   <tuv xml:lang="es"><seg>buscar</seg></tuv>
+   <tuv xml:lang="ca"><seg>cerca</seg></tuv>    
+  </tu>
+  
+  
+  
+  
+  <tu tuid='Planeamiento'>
+   <tuv xml:lang="en"><seg>master planning</seg></tuv>
+   <tuv xml:lang="es"><seg>planeamiento</seg></tuv>
+   <tuv xml:lang="ca"><seg>planejament</seg></tuv>   
+  </tu>
+  
+  <tu tuid='paisaje'>
+   <tuv xml:lang="en"><seg>landscape</seg></tuv>
+   <tuv xml:lang="es"><seg>paisaje</seg></tuv>
+   <tuv xml:lang="ca"><seg>paisatge</seg></tuv>   
+  </tu>
+    
+  <tu tuid='parques y jardines'>
+   <tuv xml:lang="en"><seg>parks and gardens</seg></tuv>
+   <tuv xml:lang="es"><seg>parques y jardines</seg></tuv>
+   <tuv xml:lang="ca"><seg>parcs i jardins</seg></tuv>   
+  </tu>
+  
+  <tu tuid='diseño urbano'>
+   <tuv xml:lang="en"><seg>urban design</seg></tuv>
+   <tuv xml:lang="es"><seg>diseño urbano</seg></tuv>
+   <tuv xml:lang="ca"><seg>disseny urbà</seg></tuv>   
+  </tu>
+  
+  <tu tuid='interiorismo'>
+   <tuv xml:lang="en"><seg>interior design</seg></tuv>
+   <tuv xml:lang="es"><seg>interiorismo</seg></tuv>
+   <tuv xml:lang="ca"><seg>interiorisme</seg></tuv>   
+  </tu>
+  
+  <tu tuid='nueva planta'>
+   <tuv xml:lang="en"><seg>building</seg></tuv>
+   <tuv xml:lang="es"><seg>nueva planta</seg></tuv>
+   <tuv xml:lang="ca"><seg>nova planta</seg></tuv>   
+  </tu>
+  
+  <tu tuid='rehabilitacion'>
+   <tuv xml:lang="en"><seg>restoration</seg></tuv>
+   <tuv xml:lang="es"><seg>rehabilitacion</seg></tuv>
+   <tuv xml:lang="ca"><seg>rehabilitació</seg></tuv>   
+  </tu>
+  
+  <tu tuid='efimeros'>
+   <tuv xml:lang="en"><seg>ephemerals</seg></tuv>
+   <tuv xml:lang="es"><seg>efimeros</seg></tuv>
+   <tuv xml:lang="ca"><seg>efímers</seg></tuv>   
+  </tu>
+  
+  <tu tuid='diseño'>
+   <tuv xml:lang="en"><seg>design</seg></tuv>
+   <tuv xml:lang="es"><seg>diseño</seg></tuv>
+   <tuv xml:lang="ca"><seg>disseny</seg></tuv>   
+  </tu>
+  **********************
+  
+  <tu tuid='Proyectos'>
+   <tuv xml:lang="en"><seg>Projects</seg></tuv>
+   <tuv xml:lang="es"><seg>Proyectos</seg></tuv>
+   <tuv xml:lang="ca"><seg>Projectes</seg></tuv>   
+  </tu>
+  
+  <tu tuid='Equipo'>
+   <tuv xml:lang="en"><seg>Team</seg></tuv>
+   <tuv xml:lang="es"><seg>Equipo</seg></tuv>
+   <tuv xml:lang="ca"><seg>Equip</seg></tuv>   
+  </tu>
+  
+  <tu tuid='Publicaciones'>
+   <tuv xml:lang="en"><seg>Publications</seg></tuv>
+   <tuv xml:lang="es"><seg>Publicaciones</seg></tuv>
+   <tuv xml:lang="ca"><seg>Publicacions</seg></tuv>   
+  </tu>
+  
+  <tu tuid='Premios'>
+   <tuv xml:lang="en"><seg>Awards</seg></tuv>
+   <tuv xml:lang="es"><seg>Premios</seg></tuv>
+   <tuv xml:lang="ca"><seg>Premis</seg></tuv>   
+  </tu>
+  
+  <tu tuid='Contacta'>
+   <tuv xml:lang="en"><seg>Contact</seg></tuv>
+   <tuv xml:lang="es"><seg>Contacta</seg></tuv>
+   <tuv xml:lang="ca"><seg>Contacte</seg></tuv>   
+  </tu>
+  
+  
+  
+  
+
+  </body>

@@ -30,6 +30,55 @@ CREATE TABLE `albums` (
   `title` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+-- -----------------------------------------------------
+-- Table `feedfilms`.`user_types`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `feedfilms`.`user_types` (
+  `idusertype` INT(11) NOT NULL AUTO_INCREMENT,
+  `usertype` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`idusertype`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `feedfilms`.`users`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `feedfilms`.`users` (
+  `iduser` INT(11) NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(255) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  `display_name` VARCHAR(255) NOT NULL,
+  `state` INT(11) NOT NULL DEFAULT '0',
+  `token` VARCHAR(255) NULL DEFAULT NULL,
+  `timeout` TIMESTAMP NULL DEFAULT NULL,
+  `idusertype` INT(11) NOT NULL,
+  PRIMARY KEY (`iduser`),
+  INDEX `fk_users_user_types_idx` (`idusertype` ASC),
+  CONSTRAINT `fk_users_user_types`
+    FOREIGN KEY (`idusertype`)
+    REFERENCES `feedfilms`.`user_types` (`idusertype`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `feedfilms`.`users`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `feedfilms`.`comments` (
+  `idcomment` INT(11) NOT NULL AUTO_INCREMENT,
+  `iduser` INT(11) NOT NULL,
+  `idparentcomment` INT(11) NOT NULL DEFAULT '0',
+  `idfilm` INT(11) NOT NULL,
+  `body` text NOT NULL,
+  `rating` INT(11) DEFAULT NULL,
+  `review` INT(11) DEFAULT NULL,
+  `dateadd` datetime NOT NULL,
+  PRIMARY KEY (`idcomment`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -42,3 +91,15 @@ CREATE TABLE `albums` (
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2013-11-20 19:58:50
+
+DROP TABLE IF EXISTS `festivals`;
+CREATE TABLE `festivals` ( 
+	`idfestival` int(11) NOT NULL AUTO_INCREMENT,
+ 	`name` text,
+	 `description` text,
+	`date` timestamp NULL DEFAULT NULL,
+    `create` timestamp NULL DEFAULT NULL,
+    `update` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`idfestival`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+

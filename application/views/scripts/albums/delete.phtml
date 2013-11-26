@@ -1,6 +1,7 @@
 <?php
 $this->title = "Delete album";
 $this->headTitle($this->title);
+
 ?>
 
 <p>Are you sure that you want to delete
@@ -12,5 +13,6 @@ $this->headTitle($this->title);
 <input type="hidden" name="id" value="<?php echo $this->album['id']; ?>" />
 <input type="submit" name="del" value="Yes" />
 <input type="submit" name="del" value="No" />
+
 </div>
 </form>

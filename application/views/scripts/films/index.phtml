@@ -1,0 +1,27 @@
+<?php 
+$this->title = "My Films";
+$this->headTitle($this->title);
+?>
+<p><a href="<?php echo $this->url(array('controller'=>'films', 
+ 'action'=>'add'));?>">Add new film</a></p>
+<table>
+<tr>
+ <th>IdUser</th>
+ <th>Title</th>
+ <th>Director</th>
+ <th>&nbsp;</th>
+</tr>
+<?php foreach($this->films as $film) : ?>
+<tr>
+ <td><?php echo $this->escape($film->iduser);?></td>
+ <td><?php echo $this->escape($film->title);?></td>
+ <td><?php echo $this->escape($film->director);?></td>
+<td>
+<a href="<?php echo $this->url(array('controller'=>'films',
+'action'=>'edit', 'id'=>$film->id));?>">Edit</a>
+<a href="<?php echo $this->url(array('controller'=>'films',
+'action'=>'delete', 'id'=>$film->id));?>">Delete</a>
+</td>
+</tr>
+<?php endforeach; ?>
+</table>

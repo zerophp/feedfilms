@@ -1,0 +1,18 @@
+<div class="row">
+	<label><?=$this->translate($this->element->getLabel());?></label>
+	<div class="inputs">
+		<?php echo $this->{$this->element->helper}(
+								        $this->element->getName(),
+								        $this->element->getValue(),
+								        $this->element->getAttribs(),
+								        $this->element->getMultiOptions(),
+								        "&nbsp;\n"
+								    ) ?>
+		<?php if($this->element->getMessages()):?>
+			<span class="system negative"><?php echo $this->formErrors($this->element->getMessages()) ?></span>
+		<?php endif;?>
+		<?php if($this->element->getDescription()):?>
+			<div class="hint"><?php echo $this->element->getDescription() ?></div>
+		<?php endif;?>
+	</div>
+</div>

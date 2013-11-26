@@ -1,11 +1,10 @@
-/.buildpath
-/.project
+.buildpath
+.project
 /.vimproject
 /.zfproject.xml
-
 INSTALL.txt
-LICENSE.txt
 README.txt
 demos/
 extras/documentation
+.settings
 .idea
