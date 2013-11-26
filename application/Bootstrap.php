@@ -99,6 +99,13 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     			'home/inicio');
     	$router->addRoute('home', $route);
     }
+    
+    protected function _initVerify()
+    {
+    	$verify = $this->getOption('verify');
+    	Zend_Registry::set("signature", $verify['signature']);
+    	Zend_Registry::set("timeout", $verify['timeout']);
+    }
 }
 
 

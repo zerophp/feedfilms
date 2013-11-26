@@ -35,7 +35,7 @@ class Application_Form_Register extends Zend_Form
 		        		'viewScript' => 'forms/_element_text.phtml'
 		        ))));
 		        ;
-        /*
+     
         $password = new Zend_Form_Element_Password('password');
         $password->setLabel('Password')
         ->setRequired(true)
@@ -45,11 +45,27 @@ class Application_Form_Register extends Zend_Form
         ->addValidator('StringLength',false,array(3,20))
         ->setAttrib('size', 30)
         ->setAttrib('maxlength', 80)
+        ->setAttrib('placeholder', 'Password...')
         ->setOptions(array('class'=>'form-control'))
         ->setDecorators(array(array('ViewScript', array(
 		        		'viewScript' => 'forms/_element_text.phtml'
 		        ))));
         
+        $confirmPswd = new Zend_Form_Element_Password('confirmpassword');
+        $confirmPswd->setLabel('Verify password:')
+        			->setRequired(true)
+        			->addValidator('NotEmpty', true)
+        			->setAttrib('size', 30)
+       				->addValidator('identical', false,
+        		array ('token' => 'password' ))
+        			->setAttrib('placeholder', 'Confirm Password...')
+        			->setOptions(array('class'=>'form-control'))
+       				->setDecorators(array(array('ViewScript', array(
+        		'viewScript' => 'forms/_element_text.phtml'
+       			 ))));
+        
+       
+      
         $display_name = new Zend_Form_Element_Text('display_name');
         $display_name->setLabel('Display Name')
         ->setRequired(true)
@@ -63,7 +79,7 @@ class Application_Form_Register extends Zend_Form
         ->setDecorators(array(array('ViewScript', array(
 		        		'viewScript' => 'forms/_element_text.phtml'
 		        ))));
-        
+        /*
         $description = new Zend_Form_Element_Textarea('description');
         $description->setLabel('Description')
         ->setRequired(true)
@@ -106,7 +122,7 @@ class Application_Form_Register extends Zend_Form
 	        ->setDecorators(array(array('ViewScript', array(
 	        		'viewScript' => 'forms/_element_text.phtml'
 	        ))));
-        
+        */
         $state = new Zend_Form_Element_Select('state');
         $state->setLabel('State')
         ->setRequired(true)
@@ -114,7 +130,7 @@ class Application_Form_Register extends Zend_Form
         ->setmultiOptions(array('1'=>'Activo', '0'=>'Inactivo'))
         ->setAttrib('maxlength', 200)
         ->setAttrib('size', 1);
-        
+     
         $idusertype = new Zend_Form_Element_Select('idusertype');
         $idusertype->setLabel('User Type')
         ->setRequired(true)
@@ -126,15 +142,22 @@ class Application_Form_Register extends Zend_Form
         $submit = new Zend_Form_Element_Submit('submit');
 		$submit->setAttrib('id', 'submitbutton');
 		
-		$this->addElements(array($id, 
-								$email, $password, $display_name, $state,
-								$description,$nid,$url,
-								$submit));
-		*/
+// 		$this->addElements(array($id, 
+// 								$email, $password, $display_name, $state,
+// 								$description,$nid,$url,
+// 								$submit));
+		
 		
 		$this->addElements(array(
 								$id,
-								$email)
+								$email,
+								$password,
+								$confirmPswd,
+								$display_name,
+								$idusertype,
+								$state,
+								$submit
+								)
 							);
     }
     
