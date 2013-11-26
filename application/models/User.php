@@ -7,8 +7,8 @@ class Application_Model_User
     protected $_email;
     protected $_iduser;
     protected $_state;
-   // protected $_token;
-    //protected $_timeout;
+   	protected $_token;
+    protected $_timeout;
     protected $_idusertype;
 
     
@@ -90,6 +90,13 @@ class Application_Model_User
 	public function getIdusertype() {
 		return $this->_idusertype;
 	}
+	
+	/**
+	 * @return the $_idusertype
+	 */
+	public function getToken() {
+		return $this->_token;
+	}
 
 	/**
 	 * @param field_type $_display_name
@@ -131,6 +138,10 @@ class Application_Model_User
 	 */
 	public function setIdusertype($_idusertype) {
 		$this->_idusertype = $_idusertype;
+	}
+	
+	public function setToken($_token) {
+		$this->_token = $_token;
 	}
 
 	

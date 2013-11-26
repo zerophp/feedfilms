@@ -1,7 +1,6 @@
-#Thu Nov 21 13:48:44 CET 2013
 =\=\=\=\=\=\=
 <<<<<<<=HEAD
 >>>>>>>=a9bb8ef88006a9176dcb27bc470b5e4499472ab8
 eclipse.preferences.version=1
-include_path=5;org.eclipse.dltk.USER_LIBRARY/org.eclipse.php.core.PHPNature\#Zend Framework 1
+include_path=0;/feedfilms\u00051;C\:/Program Files (x86)/Zend/ZendServer/share/ZendFramework/library/Zend
 use_asp_tags_as_php=false
