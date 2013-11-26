@@ -14,8 +14,22 @@ class AuthorController extends Zend_Controller_Action
 
 	public function loginAction()
 	{
-		$this->view->title="Hola holita vecinito";
-		$this->render("login");
+		$form = new Application_Form_Login();	
+
+		if ($this->getRequest()->isPost())
+		{
+			$formData = $this->getRequest()->getPost();
+				
+			if ($form->isValid($formData))
+			{
+				
+
+			} else {
+				$form->populate($formData);
+			}
+			Zend_Debug::dump($formData);
+		}
+		$this->view->form = $form;
 	}
 
 	public function logoutAction()
@@ -55,7 +69,6 @@ class AuthorController extends Zend_Controller_Action
 			}
 		}
 		$this->view->form = $form;
-		$this->render("register");
 	}
 	
 	private function setToken($email){

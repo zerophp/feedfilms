@@ -84,6 +84,13 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     	Zend_Registry::set("APIKey", $gmap['APIKey']);
     }
     
+    protected function _initCaptcha()
+    {
+    	$captcha = $this->getOption('captcha');
+    	Zend_Registry::set("PrivateKey", $captcha['privateKey']);
+    	Zend_Registry::set("PublicKey", $captcha['publicKey']);
+    }
+    
     protected function _initSeoUrl()
     {
     	$router = $this->bootstrap('frontController')->getResource('frontController')->getRouter();

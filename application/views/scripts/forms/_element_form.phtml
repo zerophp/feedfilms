@@ -1,5 +1,8 @@
-<form action="<?php echo $this->element->getAction(); ?>" method="<?php echo $this->element->getMethod(); ?>" enctype="<?php echo $this->element->getEnctype(); ?>" class="form-horizontal" role="form">
-  <h2 class="form-signin-heading">Registrarse</h2>
+<?php 
+$option = $this->element->getDecorator('ViewScript')->getOptions();
+?>
+<form action="<?php echo $this->element->getAction(); ?>" method="<?php echo $this->element->getMethod(); ?>" enctype="<?php echo $this->element->getEnctype(); ?>" class="<?php echo $option["css"]?>" role="form">
+  <h2 class="form-signin-heading"><?php echo $option['h2']?></h2>
   
   <?php 
   $elements = $this->element->getElements();

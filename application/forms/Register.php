@@ -8,10 +8,11 @@ class Application_Form_Register extends Zend_Form
         // Set the method for the display form to POST
         $this->setMethod('post')
         	 ->setName('user')
-//        	 ->setOptions(array('class' => 'form-signin'))
 			 ->setEnctype(Zend_Form::ENCTYPE_MULTIPART)
 			 ->setDecorators(array(array('ViewScript', array(
-		        		'viewScript' => 'forms/_element_form.phtml'
+		        		'viewScript' => 'forms/_element_form.phtml',
+			 			'h2' => "Register",
+			 			'css' => "form-horizontal"
 		        ))));
 		
         
