@@ -1,6 +1,6 @@
 <?php
 
-class Application_Form_User extends Zend_Form
+class User_Form_User extends Zend_Form
 {
 
     public function init()
@@ -131,7 +131,7 @@ class Application_Form_User extends Zend_Form
     	//$result = array(1=>'Cineasta', 2=>'Productora', 3=>'Jurado');
     	//return $result;
     	$result = array();
-    	$usertype = new Application_Model_UserTypeMapper();
+    	$usertype = new User_Model_UserTypeMapper();
     	$result=$usertype->fetchAll();
     	
     	
