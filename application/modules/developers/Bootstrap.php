@@ -25,4 +25,20 @@
 class Developers_Bootstrap extends Zend_Application_Module_Bootstrap
 {
 	
+	/**
+	 * Initialize configuration
+	 *
+	 * Read configuration file.
+	 * Store configuration in registry.
+	 *
+	 * @return void
+	 */
+	protected function _initConfiguration()
+	{
+		$configFile = dirname(__FILE__) . '/config.ini';
+		$admin_config = new Zend_Config_Ini($configFile,'developers');
+		Zend_Registry::set("admin_config", $admin_config);
+		//Zend_Debug::dump('admin');
+	}
+	
 }
