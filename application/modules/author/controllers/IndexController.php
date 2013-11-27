@@ -78,7 +78,7 @@ class Author_IndexController extends Zend_Controller_Action
 			}*/
 		} else { // or not! Back to the login page!
 			$this->view->failedAuthentication = true;
-			$rowset = $table->fetchRow("email ='".$values['name']."' and status=1");
+			/*$rowset = $table->fetchRow("email ='".$values['name']."' and status=1");
 			$rowCount = count($rowset);
 			if ($rowCount > 0) {
 				//echo "found $rowCount rows";
@@ -86,7 +86,8 @@ class Author_IndexController extends Zend_Controller_Action
 				$this->view->emailExist = true;
 			} else {
 				$this->_helper->redirector('index', 'index', 'admin');
-			}
+			}*/
+			$this->_helper->redirector('login', 'index', 'author');
 			$this->view->loginForm = $form;
 		}
 	}
