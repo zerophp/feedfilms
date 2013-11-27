@@ -1,15 +1,23 @@
 <?php
 
 class Films_IndexController extends Zend_Controller_Action{
+	private $paginator;
 	
 	public function init(){
 		$this->_helper->layout()->setlayout("backend");
+		$db = Zend_Registry::get("db");
+		$adapter = new Zend_Paginator_Adapter_DbSelect($db->select()->from('films'));
+		$this->paginator = new Zend_Paginator($adapter);
+		$this->paginator->setCurrentPageNumber($this->_getParam('page'));
+		$this->paginator->setItemCountPerPage(3);
+		//$this->paginator->setPageRange(3);
 	}
 	
 	public function indexAction(){
 		//Llamar al Mapper de Films que se encuentra en models y pasarselo a la vista
 		$film = new Films_Model_FilmMapper();
 		$this->view->films = $film->fetchAll();
+		$this->view->paginator = $this->paginator;
 	}
 	
 	public function addAction(){

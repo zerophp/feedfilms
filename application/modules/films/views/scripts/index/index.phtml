@@ -10,17 +10,27 @@ $this->headTitle($this->title);
  <th>Director</th>
  <th>&nbsp;</th>
 </tr>
-<?php foreach($this->films as $film) : ?>
+<?php foreach($this->paginator as $film) : ?>
 <tr>
  <td><?php echo $this->escape($film->iduser);?></td>
  <td><?php echo $this->escape($film->title);?></td>
  <td><?php echo $this->escape($film->director);?></td>
 <td>
 <a href="<?php echo $this->url(array('module' => 'films', 'controller'=>'index',
-'action'=>'edit', 'id'=>$film->id));?>">Edit</a>
+'action'=>'edit', 'id'=>$film->idfilm));?>">Edit</a>
 <a href="<?php echo $this->url(array('module' => 'films', 'controller'=>'index',
-'action'=>'delete', 'id'=>$film->id));?>">Delete</a>
+'action'=>'delete', 'id'=>$film->idfilm));?>">Delete</a>
 </td>
 </tr>
 <?php endforeach; ?>
+<tr>
+	<td colspan="4">
+		<?php echo $this->paginationControl($this->paginator,
+                                    'Sliding',
+                                    'index/my_pagination_control.phtml'); ?>
+	</td>
+</tr>
 </table>
+
+
+
