@@ -1,8 +1,6 @@
-
 <?php
 
-
-class albumsController extends Zend_Controller_Action
+class Developers_AlbumsController extends Zend_Controller_Action
 {
 	public function init()
 	{
