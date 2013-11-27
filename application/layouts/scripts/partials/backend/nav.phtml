@@ -14,13 +14,23 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             
-            <li><a href="<?php echo $this->url(array('controller'=>'user', 
-	 											'action'=>'index'));
+            <li><a href="<?php echo $this->url(array('module'=>'users',
+            										 'controller'=>'index', 
+	 												 'action'=>'index'));
 	            	?>">User account</a></li>
-            <li><a href="<?php echo $this->url(array('controller'=>'author', 
-	 											'action'=>'logout'));
+            <li><a href="<?php echo $this->url(array('module'=>'author',
+            										 'controller'=>'index', 
+	 												 'action'=>'logout'));
 	            	?>">Logout</a></li>
+          
+          <?php if(Zend_Auth::getInstance()->hasIdentity()):?>
+          <li>
+        	<a href="#" title="Edit your profile">Hello, <?=Zend_Auth::getInstance()->getIdentity()->display_name;?></a>
+          </li>
+          <?php endif;?>
           </ul>
+          
+          
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
     </div><!-- /.navbar -->

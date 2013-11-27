@@ -1,6 +1,6 @@
 <?php
 
-class AuthorController extends Zend_Controller_Action
+class Author_IndexController extends Zend_Controller_Action
 {
 	protected $signature;
 	protected $time;
@@ -78,7 +78,7 @@ class AuthorController extends Zend_Controller_Action
 			}*/
 		} else { // or not! Back to the login page!
 			$this->view->failedAuthentication = true;
-			$rowset = $table->fetchRow("email ='".$values['name']."' and status=1");
+			/*$rowset = $table->fetchRow("email ='".$values['name']."' and status=1");
 			$rowCount = count($rowset);
 			if ($rowCount > 0) {
 				//echo "found $rowCount rows";
@@ -86,7 +86,8 @@ class AuthorController extends Zend_Controller_Action
 				$this->view->emailExist = true;
 			} else {
 				$this->_helper->redirector('index', 'index', 'admin');
-			}
+			}*/
+			$this->_helper->redirector('login', 'index', 'author');
 			$this->view->loginForm = $form;
 		}
 	}
@@ -106,13 +107,8 @@ class AuthorController extends Zend_Controller_Action
         $this->view->form = $form;
 
         if ($this->getRequest()->isPost()) {
-
             $formData = $this->getRequest()->getPost();
-            $form->populate($formData);
-
-            if($form->clear->isChecked()){
-                $form->reset();
-            }else if($form->isValid($formData)) {
+            if ($form->isValid($formData)) {
                 $db = $this->_getParam('db');
                 $authAdapter = new Zend_Auth_Adapter_DbTable(
                     $db,
@@ -128,6 +124,8 @@ class AuthorController extends Zend_Controller_Action
                     $this->_helper->redirector->goToSimple('index', 'backend');
                 }
                 $this->_helper->FlashMessenger('Bad credentials!!!');
+            } else {
+                $form->populate($formData);
             }
         }
 
