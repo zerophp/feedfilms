@@ -19,12 +19,12 @@ class Comments_Model_CommentMapper
     public function getDbTable()
     {
         if (null === $this->_dbTable) {
-            $this->setDbTable('Application_Model_DbTable_Comment');
+            $this->setDbTable('Comments_Model_DbTable_Comment');
         }
         return $this->_dbTable;
     }
 
-    public function save(Application_Model_Comments $comment)
+    public function save(Comments_Model_Comments $comment)
     {
         $data = array(
         	'idcomment'   => $comment->getId(),
@@ -71,7 +71,7 @@ class Comments_Model_CommentMapper
         $resultSet = $this->getDbTable()->fetchAll();
         $entries   = array();
         foreach ($resultSet as $row) {
-            $entry = new Application_Model_Comment();
+            $entry = new Comments_Model_Comments();
             $entry->setIduser($row->iduser)
 		        	->setIdParentComment($row->idparentcomment)
 		        	->setIdFilm($row->idfilm)
