@@ -1,6 +1,6 @@
 <?php
 
-class Application_Model_UserTypeMapper
+class User_Model_UserTypeMapper
 {
     protected $_dbTable;
 
@@ -19,13 +19,13 @@ class Application_Model_UserTypeMapper
     public function getDbTable()
     {
         if (null === $this->_dbTable) {
-            $this->setDbTable('Application_Model_DbTable_UserType');
+            $this->setDbTable('User_Model_DbTable_UserType');
         }
         return $this->_dbTable;
     }
 
 
-    public function find($id, Application_Model_User $usertype)
+    public function find($id, User_Model_User $usertype)
     {
         $result = $this->getDbTable()->find($id);
         if (0 == count($result)) {
@@ -44,7 +44,7 @@ class Application_Model_UserTypeMapper
         $resultSet = $this->getDbTable()->fetchAll();
         $entries   = array();
         foreach ($resultSet as  $row) {
-            $entry = new Application_Model_UserType();
+            $entry = new User_Model_UserType();
             $entry->setIdusertype($row->idusertype);
             $entry->setUsertype($row->usertype);
             
