@@ -2,7 +2,7 @@
 	$this->title = "My Comments";
 	$this->headTitle($this->title);
 ?>
-<p><a href="<?php echo $this->url(array('controller'=>'comments', 'action'=>'add'));?>">Add new comment</a></p>
+<p><a href="<?php echo $this->url(array('module' => 'comments', 'controller'=>'index', 'action'=>'add'));?>">Add new comment</a></p>
 <table border=1>
 	<tr>
  		<th>Id User</th>
@@ -24,9 +24,9 @@
  		<td><?php echo $this->escape($comment->review);?></td>
  		<td><?php echo $this->escape($comment->dateadd);?></td>
 		<td>
-			<a href="<?php echo $this->url(array('controller'=>'comments',
+			<a href="<?php echo $this->url(array('module' => 'comments', 'controller'=>'index',
 				'action'=>'edit', 'id'=>$comment->idcomment));?>">Edit</a>
-			<a href="<?php echo $this->url(array('controller'=>'comments',
+			<a href="<?php echo $this->url(array('module' => 'comments', 'controller'=>'index',
 				'action'=>'delete', 'id'=>$comment->idcomment));?>">Delete</a>
 		</td>
 	</tr>
