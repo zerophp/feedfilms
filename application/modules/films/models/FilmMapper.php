@@ -1,6 +1,6 @@
 <?php
 
-class Application_Model_FilmMapper
+class Films_Model_FilmMapper
 {
     protected $_dbTable;
 
@@ -19,12 +19,12 @@ class Application_Model_FilmMapper
     public function getDbTable()
     {
         if (null === $this->_dbTable) {
-            $this->setDbTable('Application_Model_DbTable_Films');
+            $this->setDbTable('Films_Model_DbTable_Films');
         }
         return $this->_dbTable;
     }
 
-    public function save(Application_Model_Entity_Film $film)
+    public function save(Films_Model_Entity_Film $film)
     {
         $data = array(
         	'idfilm' => $film->getId(),
@@ -44,7 +44,7 @@ class Application_Model_FilmMapper
         }
     }
 
-    public function find($id, Application_Model_Entity_Film $film)
+    public function find($id, Films_Model_Entity_Film $film)
     {
         $result = $this->getDbTable()->find($id);
         if (0 == count($result)) {
@@ -64,7 +64,7 @@ class Application_Model_FilmMapper
         $resultSet = $this->getDbTable()->fetchAll();
         $films   = array();
         foreach ($resultSet as $row) {
-            $film = new Application_Model_Entity_Film();
+            $film = new Films_Model_Entity_Film();
             $film->setId($row->idfilm)
                   ->setIduser($row->iduser)
                   ->setTitle($row->title)

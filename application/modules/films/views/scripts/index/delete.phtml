@@ -6,7 +6,7 @@ $this->headTitle($this->title);
 '<?php echo $this->escape($this->film['title']); ?>' by
 '<?php echo $this->escape($this->film['director']); ?>'?
 </p>
-<form action="<?php echo $this->url(array('action'=>'delete')); ?>" method="post">
+<form action="<?php echo $this->url(array('module' => 'films', 'controller' => 'index', 'action'=>'delete')); ?>" method="post">
 <div>
 <input type="hidden" name="id" value="<?php echo $this->film['id']; ?>" />
 <input type="submit" name="del" value="Yes" />
