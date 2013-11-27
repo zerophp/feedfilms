@@ -15,6 +15,7 @@ class AuthorController extends Zend_Controller_Action
 
 	public function loginAction()
 	{
+
 		Zend_Debug::dump($_POST);
 		
 		$this->view->headTitle("Login", 'APPEND');
@@ -91,45 +92,6 @@ class AuthorController extends Zend_Controller_Action
 		}
 	}
 	
-	/*
-	public function loginAction()
-	{
-		
-		
-		Zend_Debug::dump($_POST);
-		
-		// action body
-		$this->_helper->layout->setLayout("layout2");
-		$this->view->title="Login";
-
-        $form = new Application_Form_Author();
-        $this->view->form = $form;
-
-        if ($this->getRequest()->isPost()) {
-            $formData = $this->getRequest()->getPost();
-            if ($form->isValid($formData)) {
-                $db = $this->_getParam('db');
-                $authAdapter = new Zend_Auth_Adapter_DbTable(
-                    $db,
-                    'users',
-                    'email',
-                    'password'
-                );
-                $authAdapter->setIdentity($formData['email'])->setCredential( $formData['password']);
-                $auth = Zend_Auth::getInstance();
-                $result = $auth->authenticate($authAdapter);
-                if ($result->isValid()){
-                    $this->_helper->FlashMessenger('Succesful login');
-                    $this->_helper->redirector->goToSimple('index', 'backend');
-                }
-                $this->_helper->FlashMessenger('Bad credentials!!!');
-            } else {
-                $form->populate($formData);
-            }
-        }
-
-	}
-	*/
 
  	public function logoutAction()
     {
@@ -169,7 +131,6 @@ class AuthorController extends Zend_Controller_Action
 			}
 		}
 		$this->view->form = $form;
-		$this->render("register");
 	}
 	
 	private function setToken($email){
