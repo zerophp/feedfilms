@@ -1,0 +1,14 @@
+<div>
+	<a href="javascript:getAjaxResponse('/scripts/data/text/text.txt','containerID')" title="text example"/>
+	  Text File</a> | 
+	
+	<a href="javascript:getAjaxResponse('/scripts/data/php/contactsdemo.php','containerID')" title="php example"/>
+	  PHP File</a> | 
+	
+	<a href="javascript:getAjaxResponse('/scripts/data/xml/complang.xml','containerID')" title="xml example"/>
+	  XML File</a>
+</div>
+<div>
+	<span id="containerIDs" style="position:absolute;left:10px;top:120px;"></span>
+	<span id="containerID" style="left:10px;top:120px;"></span>
+</div>
