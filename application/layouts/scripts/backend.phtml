@@ -23,7 +23,14 @@
       <div class="row row-offcanvas row-offcanvas-right">
       	<div class="col-xs-12 col-sm-9">
 	        <?php //echo $this->partial('partials/backend/content.phtml');?>
-            <?php array_walk($this->messages, function($val){ print $val; }); ?>
+	        
+            <?php if (count($this->messages)) : ?>
+				<ul id="messages">
+					<?php foreach ($this->messages as $message) : ?>
+						<li><?php echo $this->escape($message); ?></li>
+					<?php endforeach; ?>
+				</ul>
+			<?php endif; ?>
             <?php echo $this->layout()->content ?>
         </div><!--/span-->
         <?php echo $this->partial('partials/backend/menu.phtml');?>        
