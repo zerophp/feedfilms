@@ -22,7 +22,6 @@ class Comments_IndexController extends Zend_Controller_Action
 	function addAction()
 	{
 		$form = new Comments_Form_Comment();
-
 		$form->submit->setLabel('Add');
 		$this->view->form = $form;
 		if ($this->getRequest()->isPost()) {
