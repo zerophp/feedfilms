@@ -1,6 +1,6 @@
 <?php 
 
-class Application_Form_Film extends Zend_Form
+class Films_Form_Film extends Zend_Form
 {
 	public function init()
 	{

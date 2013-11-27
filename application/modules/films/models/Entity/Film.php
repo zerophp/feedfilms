@@ -2,7 +2,7 @@
 
 //Entity
 
-class Application_Model_Entity_Film
+class Films_Model_Entity_Film
 {
     protected $_iduser;
     protected $_title;
