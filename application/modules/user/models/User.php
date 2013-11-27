@@ -1,6 +1,6 @@
 <?php
 
-class Application_Model_User
+class User_Model_User
 {
     protected $_display_name;
     protected $_password;

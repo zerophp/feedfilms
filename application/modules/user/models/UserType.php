@@ -1,6 +1,6 @@
 <?php
 
-class Application_Model_UserType
+class User_Model_UserType
 {
  
     protected $_idusertype;

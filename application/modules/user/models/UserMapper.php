@@ -1,6 +1,6 @@
 <?php
 
-class Application_Model_UserMapper
+class User_Model_UserMapper
 {
     protected $_dbTable;
 
@@ -19,12 +19,12 @@ class Application_Model_UserMapper
     public function getDbTable()
     {
         if (null === $this->_dbTable) {
-            $this->setDbTable('Application_Model_DbTable_User');
+            $this->setDbTable('User_Model_DbTable_User');
         }
         return $this->_dbTable;
     }
 
-    public function save(Application_Model_User $user)
+    public function save(User_Model_User $user)
     {
         $data = array(
         	'iduser'  => $user->getIduser(),
@@ -44,7 +44,7 @@ class Application_Model_UserMapper
         }
     }
 
-    public function find($id, Application_Model_User $user)
+    public function find($id, User_Model_User $user)
     {
         $result = $this->getDbTable()->find($id);
         if (0 == count($result)) {
@@ -67,7 +67,7 @@ class Application_Model_UserMapper
         $resultSet = $this->getDbTable()->fetchAll();
         $entries   = array();
         foreach ($resultSet as $row) {
-            $entry = new Application_Model_User();
+            $entry = new User_Model_User();
             $entry->setIduser($row->iduser);
             $entry->setPassword($row->password);
             $entry ->setEmail($row->email);
@@ -81,7 +81,7 @@ class Application_Model_UserMapper
     
     public function delete($id)
     {
-    	$user = new Application_Model_DbTable_User();
+    	$user = new User_Model_DbTable_User();
     	$where = $user->getAdapter()->quoteInto('iduser = ?', (int)$id);
     	$this->getDbTable()->delete($where);
     	
