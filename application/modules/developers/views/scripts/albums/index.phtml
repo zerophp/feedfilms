@@ -5,6 +5,7 @@ $this->headTitle($this->title);
 <p><a href="<?php echo $this->url(array('controller'=>'albums', 
  'action'=>'add'));?>">Add new album</a></p>
 <table>
+
 <tr>
  <th>Title</th>
  <th>Artist</th>
@@ -23,6 +24,7 @@ $this->headTitle($this->title);
 'action'=>'delete', 'id'=>$album->id));?>">Delete</a>
 </td>
 </tr>
+
 <?php endforeach; ?>
 </table>
 

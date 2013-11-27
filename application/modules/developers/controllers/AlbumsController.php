@@ -1,4 +1,3 @@
-
 <?php
 
 class Developers_AlbumsController extends Zend_Controller_Action
@@ -20,8 +19,10 @@ class Developers_AlbumsController extends Zend_Controller_Action
 
 		$form->submit->setLabel('Add');
 		$this->view->form = $form;
+
 		if ($this->getRequest()->isPost()) 
 		{
+
 			$formData = $this->getRequest()->getPost();
 			if ($form->isValid($formData)) 
 			{
@@ -29,8 +30,9 @@ class Developers_AlbumsController extends Zend_Controller_Action
 				$title = $form->getValue('title');
 				$albums = new Application_Model_DbTable_Albums();
 				$albums->addAlbum($artist, $title);
-				
-				//$this->_helper->redirector('index');
+
+				$this->_helper->redirector('index');
+
 			} else {
 				$form->populate($formData);
 			}
@@ -39,9 +41,11 @@ class Developers_AlbumsController extends Zend_Controller_Action
 	
 	function editAction()
 	{
+
 		$form = new Application_Form_Album();
 		$form->submit->setLabel('Save');
 		$this->view->form = $form;
+
 		if ($this->getRequest()->isPost()) {
 			$formData = $this->getRequest()->getPost();
 			if ($form->isValid($formData)) {
@@ -50,6 +54,7 @@ class Developers_AlbumsController extends Zend_Controller_Action
 				$title = $form->getValue('title');
 				$albums = new Application_Model_DbTable_Albums();
 				$albums->updateAlbum($id, $artist, $title);
+
 				$this->_helper->redirector('index');
 			} else {
 				$form->populate($formData);
