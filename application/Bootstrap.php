@@ -67,6 +67,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     {   	
     	$translate = new Zend_Translate('tmx', dirname(__FILE__) .'/languages/info.xml', $_SESSION['default']['language']);
     	Zend_Registry::set('Zend_Translate', $translate);
+
     }
 
     protected function _initEmail()
@@ -97,6 +98,20 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     			),
     			'home/inicio');
     	$router->addRoute('home', $route);
+    }
+    
+    protected function _initVerify()
+    {
+    	$verify = $this->getOption('verify');
+    	Zend_Registry::set("signature", $verify['signature']);
+    	Zend_Registry::set("timeout", $verify['timeout']);
+    }
+    
+    protected function _initReCaptcha()
+    {
+    	$recaptcha = $this->getOption('recaptcha');
+    	Zend_Registry::set("recaptcha.public", $recaptcha['public']);
+    	Zend_Registry::set("recaptcha.private", $recaptcha['private']);
     }
 }
 
