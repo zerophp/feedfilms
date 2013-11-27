@@ -20,7 +20,15 @@
             <li><a href="<?php echo $this->url(array('controller'=>'author', 
 	 											'action'=>'logout'));
 	            	?>">Logout</a></li>
+          
+          <?php if(Zend_Auth::getInstance()->hasIdentity()):?>
+          <li>
+        	<a href="#" title="Edit your profile">Hello, <?=Zend_Auth::getInstance()->getIdentity()->display_name;?></a>
+          </li>
+          <?php endif;?>
           </ul>
+          
+          
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
     </div><!-- /.navbar -->
