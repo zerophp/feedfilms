@@ -61,22 +61,24 @@ class Default_IndexController extends Zend_Controller_Action
         return;       
     }
     
-	public function changelanguageAction()
+    public function changelanguageAction()
     {
-        $this->_helper->viewRenderer->setNoRender(true);
-
-        $request = $this->getRequest();
-        //include_once(APPLICATION_PATH . '/modules/default/forms/Languages.php'); 
-		if ($this->getRequest()->isPost()) {                        	
-            	$locale = new Zend_Locale($request->getPost('locale'));            	
-                $default = new Zend_Session_Namespace('default');
-                $default->language = $locale->getLanguage();
-                $default->locale = $locale->getRegion();
-                $this->_redirect('/backend/index/index');            
-        }
+    	$this->_helper->viewRenderer->setNoRender(true);
+    
+    	$request = $this->getRequest();
+    	//include_once(APPLICATION_PATH . '/modules/default/forms/Languages.php');
+    	if ($this->getRequest()->isPost()) {
+    		$locale = new Zend_Locale($request->getPost('locale'));
+    		$default = new Zend_Session_Namespace('default');
+    		$default->language = $locale->getLanguage();
+    		$default->locale = $locale->getRegion();
+            $this->_redirect($request->getPost('refer'));
+    	}
     	else {
-			return;
-		}
-        return;       
+    		return;
+    	}
+    	return;
     }
+    
+        
 }

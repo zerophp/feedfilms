@@ -56,13 +56,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     
     	return $db;
     }    
-    
-    protected function _initLocale()
-    {
-    	$locale = new Zend_Locale('en_EN');
-    	Zend_Registry::set('Zend_Locale', $locale);
-    	return $locale;
-    }    
+        
     
     
     protected function _initSession()
@@ -71,35 +65,39 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     	$zfip = new Zend_Session_Namespace('app');
     }
     
+
+    protected function _initLocale()
+    {
+    	$locale = new Zend_Locale('en_EN');
+    	Zend_Registry::set('Zend_Locale', $locale);
+    	$config = $this->getOptions();
+    	if (!isset($_SESSION['default'])) {
+    		$_SESSION['default'] = array('language' => $config['lang_local']);
+    	} else {
+    		if (!isset($_SESSION['default']['language'])){
+    			$_SESSION['default']['language']=$config['lang_local'];
+    		}
+    	}
+    	return $locale;
+    }
+    
     protected function _initLang()
-    {   	
-    	
+    {   	    	
     	$translate = new Zend_Translate(
     			array(
     					'adapter' => 'gettext',
     					'content' => dirname(__FILE__) .'/languages/es_ES.mo',
     					'locale'  => $_SESSION['default']['language']
     			)
-	);
-    	 
+	     );    	 
     	
-    	$translate->addTranslation(
+    	 $translate->addTranslation(
     			array(
     					'content' => dirname(__FILE__) .'/languages/en_EN.mo',
     					'locale'  => 'en_EN'
     			)
-    	);
-    	 
-    	/*$translate->addTranslation(
-    			array(
-    					'content' => dirname(__FILE__) .'/languages/fr_FR.mo',
-    					'locale'  => 'fr_FR'
-    			)
-    	);*/
-    	 
-    	
-    	//$translate = new Zend_Translate('tmx', dirname(__FILE__) .'/languages/info.xml', $_SESSION['default']['language']);
-    	Zend_Registry::set('Zend_Translate', $translate);
+    	 );    	 
+    	 Zend_Registry::set('Zend_Translate', $translate);
     }
 
     protected function _initEmail()
