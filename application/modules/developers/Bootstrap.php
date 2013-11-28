@@ -3,7 +3,7 @@
 /**
  * Bootstrap.php is the admin module bootstrap
 
- * @author     Agustín Calderón <agustincl@gmail.com>
+ * @author     AgustÃ­n CalderÃ³n <agustincl@gmail.com>
  * @copyright  Copyright 2013 Elementaweb.net All Rights Reserved.
  * @license    http://creativecommons.org/licenses/by-nc-nd/3.0/es/  CC-NC-ND
  * @category   developers

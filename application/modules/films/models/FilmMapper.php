@@ -58,20 +58,30 @@ class Films_Model_FilmMapper
                   ->setDirector($row->director);
         return $film;
     }
-
+    
     public function fetchAll()
     {
-        $resultSet = $this->getDbTable()->fetchAll();
-        $films   = array();
-        foreach ($resultSet as $row) {
-            $film = new Films_Model_Entity_Film();
-            $film->setId($row->idfilm)
-                  ->setIduser($row->iduser)
-                  ->setTitle($row->title)
-                  ->setDirector($row->director);
-            $films[] = $film;
-        }
-        return $films;
+    	 
+    	$resultSet = $this->getDbTable()->fetchAll();
+    	$cacheManager=Zend_Registry::get("cache");
+    	$cache = $cacheManager->getCache('coreCache');
+    	$id = 'rs';
+    
+    	$films   = array();
+    	foreach ($resultSet as $row) {
+    		$film = new Films_Model_Entity_Film();
+    		$film->setId($row->idfilm)
+    		->setIduser($row->iduser)
+    		->setTitle($row->title)
+    		->setDirector($row->director);
+    		$films[] = $film;
+    	}
+    
+    	if(false === ($entries = $cache->load($id))){
+    
+    		$cache->save($films, $id);
+    	}
+    	return $films;
     }
     
 	public function delete($id)
