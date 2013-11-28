@@ -35,7 +35,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     	return $view;
     }
     
- 	protected function initNavigation()
+ 	protected function _initNavigation()
     {
 		$config = $this->getOptions();
         $layout = $this->getResource('layout');
