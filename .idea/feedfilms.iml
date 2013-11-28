@@ -4,6 +4,30 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="PHP">
+        <CLASSES>
+          <root url="file://C:/Program Files (x86)/Zend/ZendServer/data/libraries/Zend_Framework_1/1.12.3" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://C:/Program Files (x86)/Zend/ZendServer/data/libraries/Zend_Framework_1/1.12.3" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="PHARS">
+        <CLASSES>
+          <root url="phar://C:/Program Files (x86)/Zend/ZendServer/data/libraries/Zend_Framework_1/1.12.3/library/Zend/Service/WindowsAzure/CommandLine/Scaffolders/DefaultScaffolder.phar" />
+          <root url="phar://C:/Program Files (x86)/Zend/ZendServer/data/libraries/Zend_Framework_1/1.12.3/tests/Zend/Loader/_files/classmap.phar" />
+          <root url="phar://C:/Program Files (x86)/Zend/ZendServer/data/libraries/Zend_Framework_1/1.12.3/tests/Zend/Loader/_files/Zend_LoaderTest.phar" />
+        </CLASSES>
+        <SOURCES>
+          <root url="phar://C:/Program Files (x86)/Zend/ZendServer/data/libraries/Zend_Framework_1/1.12.3/library/Zend/Service/WindowsAzure/CommandLine/Scaffolders/DefaultScaffolder.phar" />
+          <root url="phar://C:/Program Files (x86)/Zend/ZendServer/data/libraries/Zend_Framework_1/1.12.3/tests/Zend/Loader/_files/classmap.phar" />
+          <root url="phar://C:/Program Files (x86)/Zend/ZendServer/data/libraries/Zend_Framework_1/1.12.3/tests/Zend/Loader/_files/Zend_LoaderTest.phar" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
 

@@ -1,1 +1,20 @@
 
+Google:
+gamil: thefeedfilms/zaq1234esz
+
+
+Organization	None
+Organization website	None
+OAuth settings
+
+Your application's OAuth settings. Keep the "Consumer secret" a secret. This key should never be human-readable in your application.
+
+Access level	 Read-only 
+About the application permission model
+Consumer key	6m5PRdgc8L34OHt0jl7XQ
+Consumer secret	MbrgvIa7AQRCkNaHToKGdyIfuBPlhUVKKN2fo7k
+Request token URL	https://api.twitter.com/oauth/request_token
+Authorize URL	https://api.twitter.com/oauth/authorize
+Access token URL	https://api.twitter.com/oauth/access_token
+Callback URL	http://www.elementalweb.net
+Sign in with Twitter	No

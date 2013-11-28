@@ -92,7 +92,6 @@ class AuthorController extends Zend_Controller_Action
 		}
 	}
 	
-
  	public function logoutAction()
     {
     	Zend_Auth::getInstance()->clearIdentity();
