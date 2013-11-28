@@ -66,13 +66,13 @@ class Default_IndexController extends Zend_Controller_Action
         $this->_helper->viewRenderer->setNoRender(true);
 
         $request = $this->getRequest();
-        include_once(APPLICATION_PATH . '/modules/default/forms/Languages.php'); 
+        //include_once(APPLICATION_PATH . '/modules/default/forms/Languages.php'); 
 		if ($this->getRequest()->isPost()) {                        	
-            	$locale = new Zend_Locale($request->getPost('language'));            	
+            	$locale = new Zend_Locale($request->getPost('locale'));            	
                 $default = new Zend_Session_Namespace('default');
                 $default->language = $locale->getLanguage();
                 $default->locale = $locale->getRegion();
-                $this->_redirect($request->getPost('refer'));            
+                $this->_redirect('/backend/index/index');            
         }
     	else {
 			return;

@@ -9,6 +9,7 @@ class Backend_IndexController extends Zend_Controller_Action
     {
         $this->_helper->layout()->setLayout("backend");
         $this->view->messages = $this->_helper->flashMessenger->getMessages();
+
         $this->_auth = Zend_Auth::getInstance();
         if(!$this->_auth->hasIdentity())
         {
@@ -20,9 +21,11 @@ class Backend_IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
+    	// action body
     }
-
+    
+    
+    
 	
 }
 
