@@ -1,0 +1,38 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Agustin Calderon <agustincl@gmail.com>\n"
+"Language-Team: anguila Perro <anguilaperro@gmailcom>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+
+msgid "Home"
+msgstr "Home"
+
+msgid "About"
+msgstr "About"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Dropdown"
+msgstr "Dropdown"
+
+msgid "Action"
+msgstr "Action"
+
+msgid "Another Action"
+msgstr "Another Action"
+
+msgid "Something else here"
+msgstr "Something else here"
+
+msgid "All rights reserved."
+msgstr "All rights reserved."
+
+msgid "Exception"
+msgstr "Exception"

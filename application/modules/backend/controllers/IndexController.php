@@ -7,10 +7,22 @@ class Backend_IndexController extends Zend_Controller_Action
 	
     public function init()
     {
-        $this->_helper->layout()->setLayout("backend");
+        
+    	if ($this->getRequest()->isPost()) {
+    		$post=$this->getRequest()->getPost();
+    		if (isset($post['locale'])){
+    			$lang=$post['locale'];
+    			$_SESSION['default']['language']=$lang;
+    			$translate=Zend_Registry::get('Zend_Translate');
+    			$translate->setLocale($lang);
+//    			$translate->setContent( dirname(__FILE__) .'/languages/'.$lang.'.mo');    			
+    			 
+    		}
+    	}  	
+    	
+    	
+    	$this->_helper->layout()->setLayout("backend");
         $this->view->messages = $this->_helper->flashMessenger->getMessages();
-        
-        
         
         $this->_auth = Zend_Auth::getInstance();
         if(!$this->_auth->hasIdentity()){
@@ -23,9 +35,11 @@ class Backend_IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
+    	// action body
     }
-
+    
+    
+    
 	
 }
 

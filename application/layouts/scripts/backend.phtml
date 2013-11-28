@@ -19,11 +19,12 @@
 
 
 <?php echo $this->partial('partials/backend/nav.phtml');?>
+
     <div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
       	<div class="col-xs-12 col-sm-9">
 	        <?php //echo $this->partial('partials/backend/content.phtml');?>
-	        
+	        <span><?echo $this->translate('Home')?></span>
             <?php if (count($this->messages)) : ?>
 				<ul id="messages">
 					<?php foreach ($this->messages as $message) : ?>
