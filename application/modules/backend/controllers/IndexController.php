@@ -24,6 +24,38 @@ class Backend_IndexController extends Zend_Controller_Action
     	// action body
     }
     
+    public function searchAction()
+    {
+    	 
+    	$index=Zend_Search_Lucene::create('../application/data/index');
+    	 
+    	$festivales = new Festivals_Model_FestivalsMapper();
+    	$records = $festivales->fetchAll();
+    
+    	foreach ($records as $record ){
+    		$doc= new Zend_Search_Lucene_Document();
+    		$doc->addField(Zend_Search_Lucene_Field::text('description',$record->getDescription(),'UTF-8'));
+    		$doc->addField(Zend_Search_Lucene_Field::text('name',$record->getName(),'UTF-8'));
+    		$index->addDocument($doc);
+    	}
+    
+    	$index->commit();
+    	$request=$this->getRequest();
+    	if ($request->isPost()) {
+    		$text= $request->getPost('searchtext');
+    		$index=Zend_Search_Lucene::open('../application/data/index');
+    		$results=$index->find($text);
+    		$this->view->searchresults=$results;
+    		$this->view->searchterm=$text;
+    	}
+    	else {
+    		return;
+    	}
+    	 
+    	return;
+    }
+    
+    
     
     
 	

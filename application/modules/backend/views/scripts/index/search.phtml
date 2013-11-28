@@ -1,0 +1,10 @@
+<?php if(count($this->searchresults)==0):?>
+	<div>No se han encontrado coincidencias.</div>
+<?php else:?>
+	<ul>
+	  <?php foreach ($this->searchresults as $resultado) : ?>
+	      <li><h3><?php echo str_replace ( $this->searchterm , '<strong>'.$this->searchterm.'</strong>' ,$resultado->name);?></h3></li>
+	      <li><?php echo str_replace ( $this->searchterm , '<strong>'.$this->searchterm.'</strong>' ,$resultado->description   );?></li>
+	  <?php endforeach;?>
+	</ul>
+<?php endif;?>
