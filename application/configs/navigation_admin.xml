@@ -1,294 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <nav>
-        <admin>
-            <label>Admin</label>
+    
+    	<albums>
+            <label>Albums</label>
             <route>default</route>
-            <module>admin</module>
-            <controller>index</controller>
+            <module>developers</module>
+            <controller>albums</controller>
             <action>index</action>
-            <uri>/admin/index/index</uri>
-            <resource>admin:index</resource>
+            <resource>developers:index</resource>
             <privilege>index</privilege>
             <pages>            	
                 <list>
-                    <label>List Resources</label>
-                    <module>admin</module>
-                    <controller>index</controller>
-                    <action>listresources</action>
-                    <resource>admin:index</resource>
-                    <privilege>listresources</privilege>
+                    <label>Add album</label>
+                    <module>developers</module>
+                    <controller>albums</controller>
+                    <action>add</action>
+                    <resource>developers:albums</resource>
+                    <privilege>add</privilege>
                 </list>
-                <check>
-                    <label>Check Config</label>
-                    <uri>/admin/index/checkconfig</uri>
-                    <resource>admin:index</resource>
-                    <privilege>checkconfig</privilege>
-                </check>
-                <dump>
-                    <label>Data Dump</label>
-                    <uri>/admin/index/dump</uri>
-                    <resource>admin:index</resource>
-                    <privilege>dump</privilege>
-                    <pages>
-                        <all>
-                            <label>All Database Dump</label>
-                            <uri>/admin/index/datadump</uri>
-                            <resource>admin:index</resource>
-                            <privilege>datadump</privilege>
-                        </all>
-                        <perssions>
-                            <label>Modules and Permissions Dump</label>
-                            <uri>/admin/index/permissionsdump</uri>
-                            <resource>admin:index</resource>
-                            <privilege>permissionsdump</privilege>
-                        </perssions>
-                        <restore>
-                            <label>Modules and Permissions Restore</label>
-                            <uri>/admin/index/restorepermissionsdump</uri>
-                            <resource>admin:index</resource>
-                            <privilege>restorepermissionsdump</privilege>
-                        </restore>
-                    </pages>
-                </dump>
-               
-                
-               
             </pages>
-        </admin>      
-        <users>
-            <label>Usuarios</label>
+        </albums>     
+        
+         <users>
+            <label>Users</label>
             <route>default</route>
-            <module>users</module>
-            <controller>index</controller>
+            <module>user</module>
+            <controller>user</controller>
             <action>index</action>
-            <uri>/users/index/index</uri>
-            <resource>users:index</resource>
+            <resource>user:user</resource>
             <privilege>index</privilege>
-            <pages>
-                <listusers>
-                    <label>Users</label>
-                    <uri>/users/index</uri>
-                    <resource>users:index</resource>
-                    <privilege>index</privilege>
-                    <pages>
-                        <add>
-                            <label>Agregar Usuario</label>
-                            <uri>/users/index/add</uri>
-                            <resource>users:index</resource>
-                            <privilege>add</privilege>
-                        </add>
-                        <edit>
-                            <label>Editar Usuario</label>
-                            <uri>/users/index/edit</uri>
-                            <resource>users:index</resource>
-                            <privilege>edit</privilege>
-                        </edit>
-                        <delete>
-                            <label>Borrar Usuario</label>
-                            <uri>/users/index/delete</uri>
-                            <resource>users:index</resource>
-                            <privilege>delete</privilege>
-                        </delete>
-                        <password>
-                            <label>Editar Password</label>
-                            <uri>/users/index/editpassword</uri>
-                            <resource>users:index</resource>
-                            <privilege>editpassword</privilege>
-                        </password>
-                    </pages>
-                </listusers>
-                <roles>
-                    <label>Roles</label>
-                    <uri>/users/roles/index</uri>
-                    <resource>users:roles</resource>
-                    <privilege>index</privilege>
-                    <pages>
-                        <add>
-                            <label>Agregar Rol</label>
-                            <uri>/users/roles/add</uri>
-                            <resource>users:roles</resource>
-                            <privilege>add</privilege>
-                        </add>
-                        <edit>
-                            <label>Editar Rol</label>
-                            <uri>/users/roles/edit</uri>
-                            <resource>users:roles</resource>
-                            <privilege>edit</privilege>
-                        </edit>
-                        <delete>
-                            <label>Borrar Rol</label>
-                            <uri>/users/roles/delete</uri>
-                            <resource>users:roles</resource>
-                            <privilege>delete</privilege>
-                        </delete>
-                    </pages>
-                </roles>
-                <resources>
-                    <label>Resources</label>
-                    <uri>/users/resources/index</uri>
-                    <resource>users:resources</resource>
-                    <privilege>index</privilege>
-                    <pages>
-                        <add>
-                            <label>Agregar Resource</label>
-                            <uri>/users/resources/add</uri>
-                            <resource>users:resources</resource>
-                            <privilege>add</privilege>
-                        </add>
-                        <edit>
-                            <label>Editar Resource</label>
-                            <uri>/users/resources/edit</uri>
-                            <resource>users:resources</resource>
-                            <privilege>edit</privilege>
-                        </edit>
-                        <delete>
-                            <label>Borrar Resource</label>
-                            <uri>/users/resources/delete</uri>
-                            <resource>users:resources</resource>
-                            <privilege>delete</privilege>
-                        </delete>
-                    </pages>
-                </resources>
-                <permissions>
-                    <label>Permissions</label>
-                    <uri>/users/permissions/index</uri>
-                    <resource>users:permissions</resource>
-                    <privilege>index</privilege>
-                    <pages>
-                        <add>
-                            <label>Agregar Permission</label>
-                            <uri>/users/permissions/add</uri>
-                            <resource>users:permissions</resource>
-                            <privilege>add</privilege>
-                        </add>
-                        <edit>
-                            <label>Editar Permission</label>
-                            <uri>/users/permissions/edit</uri>
-                            <resource>users:permissions</resource>
-                            <privilege>edit</privilege>
-                        </edit>
-                        <delete>
-                            <label>Borrar Permission</label>
-                            <uri>/users/permissions/delete</uri>
-                            <resource>users:permissions</resource>
-                            <privilege>delete</privilege>
-                        </delete>
-                    </pages>
-                </permissions>
-                <modules>
-                    <label>Módulos</label>
-                    <uri>/users/modules/index</uri>
-                    <resource>users:modules</resource>
-                    <privilege>index</privilege>
-                    <pages>
-                        <add>
-                            <label>Agregar Módulo</label>
-                            <uri>/users/modules/add</uri>
-                            <resource>users:modules</resource>
-                            <privilege>add</privilege>
-                        </add>
-                        <edit>
-                            <label>Editar Módulo</label>
-                            <uri>/users/modules/edit</uri>
-                            <resource>users:modules</resource>
-                            <privilege>edit</privilege>
-                        </edit>
-                        <delete>
-                            <label>Borrar Módulo</label>
-                            <uri>/users/modules/delete</uri>
-                            <resource>users:modules</resource>
-                            <privilege>delete</privilege>
-                        </delete>
-                    </pages>
-                </modules>
+            <pages>            	
                 <list>
-                    <label>List Resources</label>
-                    <uri>/users/resources/listresources</uri>
-                    <resource>users:resources</resource>
-                    <privilege>listresources</privilege>
+                    <label>Add user</label>
+                    <module>user</module>
+                    <controller>user</controller>
+                    <action>add</action>
+                    <resource>user:user</resource>
+                    <privilege>add</privilege>
                 </list>
             </pages>
-        </users>
-        <developers>
-            <label>Developers</label>
+        </users>  
+    
+        <films>
+            <label>Films</label>
             <route>default</route>
-            <module>developers</module>
+            <module>films</module>
             <controller>index</controller>
             <action>index</action>
-            <uri>/developers/index/index</uri>
-            <resource>developers:index</resource>
+            <resource>films:index</resource>
             <privilege>index</privilege>
-            <pages>
-                <useajax>
-                    <label>Use Ajax</label>
-                    <module>developers</module>
+            <pages>            	
+                <list>
+                    <label>Add films</label>
+                    <module>films</module>
                     <controller>index</controller>
-                    <action>useajax</action>
-                    <resource>developers:index</resource>
-                    <privilege>useajax</privilege>
-                </useajax>
-                <usedojojs>
-                    <label>Use Dojo</label>
-                    <module>developers</module>
-                    <controller>index</controller>
-                    <action>usedojojs</action>
-                    <resource>developers:index</resource>
-                    <privilege>usedojojs</privilege>
-                </usedojojs>
+                    <action>add</action>
+                    <resource>films:index</resource>
+                    <privilege>add</privilege>
+                </list>
             </pages>
-        </developers>
-        <frontend>
-            <label>Frontend</label>
+        </films>    
+        
+         <festivals>
+            <label>Festivals</label>
             <route>default</route>
-            <module>frontend</module>
+            <module>festivals</module>
             <controller>index</controller>
             <action>index</action>
-            <uri>/frontend</uri>
-            <resource>frontend:index</resource>
+            <resource>festivals:index</resource>
             <privilege>index</privilege>
-            <pages>
-                <frontend>
-                    <label>Frontend</label>
-                    <target>blank</target>
-                    <uri>/frontend/index</uri>
-                    <resource>frontend:index</resource>
-                    <privilege>index</privilege>
-                </frontend>
+            <pages>            	
+                <list>
+                    <label>Add festival</label>
+                    <module>festivals</module>
+                    <controller>index</controller>
+                    <action>add</action>
+                    <resource>festivals:index</resource>
+                    <privilege>add</privilege>
+                </list>
             </pages>
-        </frontend>
-         <management>
-            <label>Management</label>
-            <route>default</route>            
-            <uri>/projects</uri>
-            <resource>projects:index</resource>
+        </festivals>    
+        
+         <comments>
+            <label>Comments</label>
+            <route>default</route>
+            <module>comments</module>
+            <controller>index</controller>
+            <action>index</action>
+            <resource>comments:index</resource>
             <privilege>index</privilege>
-            <pages>
-                <projects>
-                    <label>Projects</label>                   
-                    <uri>/projects/index</uri>
-                    <resource>projects:index</resource>
-                    <privilege>index</privilege>
-                </projects>
-                 <publications>
-                    <label>Publications</label>                   
-                    <uri>/publications/index</uri>
-                    <resource>publications:index</resource>
-                    <privilege>index</privilege>
-                </publications>
-                <images>
-                    <label>Images</label>                   
-                    <uri>/images/index</uri>
-                    <resource>images:index</resource>
-                    <privilege>index</privilege>
-                </images>
-                <equipo>
-                    <label>Equipo</label>                   
-                    <uri>/equipo/index</uri>
-                    <resource>equipo:index</resource>
-                    <privilege>index</privilege>
-                </equipo>
+            <pages>            	
+                <list>
+                    <label>Add comment</label>
+                    <module>comments</module>
+                    <controller>index</controller>
+                    <action>add</action>
+                    <resource>comments:index</resource>
+                    <privilege>add</privilege>
+                </list>
             </pages>
-        </management>        
+        </comments>      
+        
+                       
     </nav>
 </config>
