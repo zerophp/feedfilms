@@ -1,15 +1,17 @@
-<?php foreach ($this->cols as $col) { ?>
+<?php foreach ($this->cols as $col) : ?>
+    <ul>
     <?php foreach($col as $twits): ?>
         <?php foreach($twits as $key => $twit): ?>
 
             <?php if(is_numeric($key)) : ?>
-                <pre>
+                <li>
                 <?php print $twit->text ?>
-                </pre>
+                </li>
             <?php else: ?>
                 <?php break; ?>
             <?php endif ?>
 
         <?php endforeach ?>
     <?php endforeach ?>
-<?php } ?>
+    </ul>
+<?php endforeach ?>
