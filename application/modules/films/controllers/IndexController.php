@@ -16,8 +16,30 @@ class Films_IndexController extends Zend_Controller_Action{
 	public function indexAction(){
 		//Llamar al Mapper de Films que se encuentra en models y pasarselo a la vista
 		$film = new Films_Model_FilmMapper();
+		$cacheManager=Zend_Registry::get("cache");
+		$cache = $cacheManager->getCache('coreCache');
+		$id = 'rs';
 		$this->view->films = $film->fetchAll();
 		$this->view->paginator = $this->paginator;
+		
+		$start=microtime(true);
+		$cacheManager=Zend_Registry::get("cache");
+		$cache = $cacheManager->getCache('coreCache');
+		
+		// 		Zend_Debug::dump($cache);
+		
+		$id='rs';
+		if(!($cache->load($id))) {
+			echo "not found";
+		}
+		else {
+			echo "running from cache";
+		}
+		
+		
+		echo sprintf("%01.6f",microtime(true)-$start);
+		
+		
 	}
 	
 	public function addAction(){
