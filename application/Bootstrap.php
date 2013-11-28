@@ -120,4 +120,12 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     	Zend_Registry::set("recaptcha.public", $recaptcha['public']);
     	Zend_Registry::set("recaptcha.private", $recaptcha['private']);
     }
+    
+    protected function initRestRoute()
+    {
+    	$this->bootstrap('frontController');
+    	$frontController = Zend_Controller_Front::getInstance();
+    	$restRoute = new Zend_Rest_Route($frontController);
+    	$frontController->getRouter()->addRoute('default', $restRoute);
+    }
 }
