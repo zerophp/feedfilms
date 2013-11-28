@@ -160,4 +160,18 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     	$restRoute = new Zend_Rest_Route($frontController);
     	$frontController->getRouter()->addRoute('default', $restRoute);
     }
+    
+    protected function _initCache()
+    {
+    	$cacheini = $this->getOption('cache');
+    	$frontend=array("lifetime"=>$cacheini['lifetime'],"automatic_serialization"=>$cacheini['automatic_serialization']);
+    	$backend=array("cache_dir"=>$cacheini['cache_dir']);
+    	$cacheManager = new Zend_Cache_Manager();
+    	$cache=Zend_Cache::factory('Core','File',$frontend, $backend);
+    	 
+    	$cacheManager->setCache('coreCache', $cache);
+    
+    	Zend_Registry::set("cache", $cacheManager);
+    	return $cache;
+    }
 }
