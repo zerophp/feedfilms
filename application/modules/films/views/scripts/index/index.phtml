@@ -17,9 +17,9 @@ $this->headTitle($this->title);
  <td><?php echo $this->escape($film->director);?></td>
 <td>
 <a href="<?php echo $this->url(array('module' => 'films', 'controller'=>'index',
-'action'=>'edit', 'id'=>$film->idfilm));?>">Edit</a>
+'action'=>'edit', 'id'=>$film->idfilm), null, true);?>">Edit</a>
 <a href="<?php echo $this->url(array('module' => 'films', 'controller'=>'index',
-'action'=>'delete', 'id'=>$film->idfilm));?>">Delete</a>
+'action'=>'delete', 'id'=>$film->idfilm), null, true);?>">Delete</a>
 </td>
 </tr>
 <?php endforeach; ?>
