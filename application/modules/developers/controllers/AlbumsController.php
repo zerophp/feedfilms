@@ -5,50 +5,20 @@ class Developers_AlbumsController extends Zend_Controller_Action
 	public function init()
 	{
 		$this->_helper->layout()->setLayout("backend");
-// 		$this->_helper->contextSwitch()->initContext();
-		
-		
-// 		$context = $this->_helper->getHelper('AjaxContext');
-// 		$context->addActionContext('index', 'json')		
-// 		->addActionContext('form', 'html')
-// 		->addActionContext('process', 'json')
-// 		->initContext();
-		
-// 		$contextSwitch = $this->_helper->getHelper('AjaxContext');
-// 		$contextSwitch = $this->_helper->getHelper('contextSwitch');
-// 		$contextSwitch->setDefaultContext('json');
-// 		$contextSwitch->addActionContext(array('index'), array('xml','json'))
-// 					  ->initContext();
-		
-		$this->_helper->ajaxContext()
-					  ->addActionContext('index', 'json')
+		$contextSwitch = $this->_helper->getHelper('contextSwitch');
+		$contextSwitch->addActionContext('index', 'json')
 					  ->initContext();
-	}
-	public function listAction()
-	{
-				$this->_forward('list');
-	}
-	public function indexAction()
-	{
+// 		$contextSwitch->getcontext();
+// 		die("caca");
 		
-		if($this->_request->isXmlHttpRequest())
-		{
-			header('Content-Type: application/json');
-			$this->_helper->viewRenderer->setNoRender(true);
-			$this->_helper->layout->disableLayout();
-			$albums = new Application_Model_DbTable_Albums();
-			$this->_helper->json->sendJson($albums->fetchAll());
-			
-			
-			
-		}
-		else	
-		{
+	}
+	
+	public function indexAction()
+	{		
+// 			Zend_Debug::dump($this->_helper->getHelper('contextSwitch'));
 			$albums = new Application_Model_DbTable_Albums();
 			$this->view->albums = $albums->fetchAll();
-			
-			
-		}
+//  			$this->_helper->json->sendJson($albums->fetchAll());
 	}
 	
 	function addAction()

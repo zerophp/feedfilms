@@ -57,12 +57,28 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     	return $db;
     }    
     
+     
+
     protected function _initLocale()
     {
-    	$locale = new Zend_Locale('en_EN');
+    	$locale = new Zend_Locale();
+    	$config = $this->getOptions();
+    	$defaultLocale = $config['lang_local'];
+    
+    
+    	try {
+    		$locale = new Zend_Locale('auto');
+    	} catch (Zend_Locale_Exception $e) {
+    		$locale = new Zend_Locale($defaultLocale);
+    	}
+    
+    	if(!isset($_SESSION['default']['locale']))
+    		$_SESSION['default']['locale']=$locale->getRegion();
+    	if(!isset($_SESSION['default']['language']))
+    		$_SESSION['default']['language']=$locale->getLanguage();
     	Zend_Registry::set('Zend_Locale', $locale);
-    	return $locale;
-    }    
+    
+    }
     
     
     protected function _initSession()
@@ -153,11 +169,22 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     	Zend_Registry::set("recaptcha.private", $recaptcha['private']);
     }
     
-    protected function initRestRoute()
+    protected function _initRestRoute()
     {
     	$this->bootstrap('frontController');
     	$frontController = Zend_Controller_Front::getInstance();
     	$restRoute = new Zend_Rest_Route($frontController);
-    	$frontController->getRouter()->addRoute('default', $restRoute);
+//     	$frontController->getRouter()->addRoute('developers');
+//     	$frontController->getRouter()->addRoute(array('module'=>'developers',
+//     												  'controller'=>'albums',
+//     												  'action'=>'index'), $restRoute);
+    	$frontController->getRouter()->addRoute('developers', $restRoute);
     }
+    
+//     protected function iniRest()
+//     {
+//     	$fc = Zend_Controller_Front::getInstance();
+//     	$restRoute = new Zend_Rest_Route($fc, array(), array('abcd'=>array('contacts'),));
+//     	$fc->getRouter()->addRoute('contacts', $restRoute);
+//     }
 }
