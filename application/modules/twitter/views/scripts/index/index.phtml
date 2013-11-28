@@ -1,17 +1,19 @@
-<?php foreach ($this->cols as $col) : ?>
-    <ul>
-    <?php foreach($col as $twits): ?>
-        <?php foreach($twits as $key => $twit): ?>
+<?php foreach ($this->cols as $hashtag => $col) : ?>
+    <div class="col-md-<?php print count($this->cols) ?>">
+        <h2><?php print $hashtag; ?></h2>
+        <ul>
+        <?php foreach($col as $twits): ?>
 
-            <?php if(is_numeric($key)) : ?>
-                <li>
-                <?php print $twit->text ?>
-                </li>
-            <?php else: ?>
-                <?php break; ?>
-            <?php endif ?>
-
+            <?php foreach($twits as $key => $twit): ?>
+                <?php if(is_numeric($key)) : ?>
+                    <li>
+                    <?php print $twit->text ?>
+                    </li>
+                <?php else: ?>
+                    <?php break; ?>
+                <?php endif ?>
+            <?php endforeach ?>
         <?php endforeach ?>
-    <?php endforeach ?>
-    </ul>
+        </ul>
+    </div>
 <?php endforeach ?>

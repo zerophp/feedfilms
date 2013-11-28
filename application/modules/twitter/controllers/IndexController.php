@@ -34,7 +34,11 @@ class Twitter_IndexController extends Zend_Controller_Action{
         $hashtags = Zend_Registry::get('twitter_hashtags');
         $cols = array();
         foreach ($hashtags->toArray() as $hashtag) {
-            $cols[] = $twitter->searchTweets('#' . $hashtag)->toValue();
+            $cols[$hashtag] = $twitter->searchTweets('#' . $hashtag,
+                array(
+                    'count' => '100',
+                )
+            )->toValue();
         }
         $this->view->cols = $cols;
     }
