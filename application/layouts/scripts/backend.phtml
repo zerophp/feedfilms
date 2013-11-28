@@ -35,7 +35,9 @@
             <?php echo $this->layout()->content ?>
 
         </div><!--/span-->
-      <?php echo $this->partial("partials/backend/menu.phtml");?>  
+        <div class="col-xs-12 col-sm-3">
+      			<?php  echo $this->navigation()->menu()->renderMenu();?>
+      	</div>
       </div><!--/row-->
       <hr>
 
